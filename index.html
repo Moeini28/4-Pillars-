@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راهنمای جامع مشاور WFG — 4 Pillars و راهکارهای بدهی در کانادا</title>
+<meta name="description" content="راهنمای عملیاتی و آموزشی برای مشاوران مالی WFG درباره‌ی شناسایی مشکلات بدهی مشتریان و ارجاع صحیح به 4 Pillars در چارچوب مقررات کانادا.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F3EC;
+  --paper-2:#FFFFFF;
+  --ink:#1A2433;
+  --ink-soft:#3C4858;
+  --navy:#16304F;
+  --navy-deep:#0E2238;
+  --copper:#B5732E;
+  --copper-soft:#E9D8C2;
+  --gold:#C9A227;
+  --line:#D9D2C4;
+  --green:#2E5E3A;
+  --green-soft:#E4EFE3;
+  --red:#9E2B2B;
+  --red-soft:#F6E2DE;
+  --blue-soft:#E2ECF5;
+  --shadow:0 1px 3px rgba(16,34,56,.08),0 8px 28px rgba(16,34,56,.06);
+  --radius:14px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Vazirmatn',system-ui,Tahoma,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:2;
+  font-size:17px;
+  font-weight:400;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ---------- Layout shell ---------- */
+.layout{display:flex;max-width:var(--maxw);margin:0 auto;gap:0;align-items:flex-start}
+.sidebar{
+  position:sticky;top:0;height:100vh;width:300px;flex:0 0 300px;
+  background:var(--navy-deep);color:#E8EEF5;
+  overflow-y:auto;padding:0;
+  border-inline-start:1px solid rgba(255,255,255,.06);
+}
+.content{flex:1 1 auto;min-width:0;padding:0 0 80px}
+
+/* ---------- Sidebar / TOC ---------- */
+.brand{padding:26px 24px 20px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:var(--navy-deep);z-index:2}
+.brand .pillars{display:flex;gap:5px;margin-bottom:14px}
+.brand .pillars span{width:9px;height:34px;background:linear-gradient(var(--gold),var(--copper));border-radius:2px;display:block;opacity:.9}
+.brand .pillars span:nth-child(2){height:40px}
+.brand .pillars span:nth-child(3){height:40px}
+.brand .pillars span:nth-child(4){height:34px}
+.brand h1{font-size:18px;font-weight:800;color:#fff;line-height:1.6}
+.brand .sub{font-size:12.5px;color:#9DB2C9;margin-top:6px;font-weight:500}
+.toc{padding:14px 12px 40px}
+.toc a{display:block;color:#B9C7D8;text-decoration:none;font-size:13.5px;padding:7px 14px;border-radius:8px;font-weight:500;line-height:1.7;transition:background .15s,color .15s}
+.toc a .n{color:var(--gold);font-weight:700;font-size:12px;margin-inline-end:7px;font-variant-numeric:tabular-nums}
+.toc a:hover{background:rgba(255,255,255,.06);color:#fff}
+.toc a.active{background:var(--copper);color:#fff}
+.toc a.active .n{color:#fff}
+
+/* ---------- Mobile nav ---------- */
+.topbar{display:none;position:sticky;top:0;z-index:50;background:var(--navy-deep);color:#fff;padding:12px 16px;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.topbar h2{font-size:15px;font-weight:700}
+.menu-btn{background:var(--copper);border:none;color:#fff;font-family:inherit;font-size:14px;font-weight:700;padding:8px 14px;border-radius:8px;cursor:pointer}
+.scrim{display:none;position:fixed;inset:0;background:rgba(14,34,56,.55);z-index:40}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 90% -10%,rgba(201,162,39,.16),transparent 60%),
+    linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#fff;padding:70px 60px 60px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:-60px;bottom:-40px;display:flex;
+  width:340px;height:260px;opacity:.07;
+  background-image:repeating-linear-gradient(90deg,#fff 0 28px,transparent 28px 70px);
+}
+.hero .eyebrow{display:inline-block;font-size:13px;letter-spacing:.5px;color:var(--gold);font-weight:700;border:1px solid rgba(201,162,39,.4);padding:5px 14px;border-radius:30px;margin-bottom:22px}
+.hero h1{font-size:clamp(28px,4.4vw,46px);font-weight:900;line-height:1.45;max-width:780px;letter-spacing:-.3px}
+.hero h1 .accent{color:var(--gold)}
+.hero p.lead{margin-top:22px;font-size:18px;color:#C9D6E6;max-width:680px;line-height:2}
+.hero .meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px}
+.hero .meta span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:30px;font-size:13px;color:#DCE6F1;font-weight:500}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--navy-deep);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.stats div{padding:26px 18px;text-align:center;border-inline-start:1px solid rgba(255,255,255,.07)}
+.stats div:first-child{border:none}
+.stats b{display:block;font-size:30px;font-weight:900;color:var(--gold);line-height:1.2;font-variant-numeric:tabular-nums}
+.stats small{display:block;font-size:12.5px;color:#A9BACF;margin-top:6px;line-height:1.7}
+
+/* ---------- Body sections ---------- */
+.wrap{padding:0 60px}
+section.part{padding:54px 0 10px;border-bottom:1px solid var(--line);scroll-margin-top:20px}
+section.part:last-of-type{border-bottom:none}
+.part-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.part-head .pn{
+  font-size:14px;font-weight:800;color:#fff;background:var(--copper);
+  border-radius:8px;padding:6px 12px;flex:0 0 auto;letter-spacing:.5px;
+  font-variant-numeric:tabular-nums;
+}
+h2.part-title{font-size:clamp(23px,3vw,32px);font-weight:900;color:var(--navy);line-height:1.5;letter-spacing:-.2px}
+h3{font-size:21px;font-weight:800;color:var(--navy);margin:34px 0 12px;line-height:1.6;border-inline-start:4px solid var(--gold);padding-inline-start:14px}
+h4{font-size:17.5px;font-weight:800;color:var(--copper);margin:24px 0 10px}
+p{margin:12px 0;color:var(--ink-soft)}
+.lead-p{font-size:18.5px;color:var(--ink);font-weight:500;line-height:2.1;margin:14px 0 8px}
+a.inline{color:var(--copper);font-weight:600;text-decoration:none;border-bottom:1px solid var(--copper-soft)}
+a.inline:hover{border-color:var(--copper)}
+strong{color:var(--ink);font-weight:800}
+.en{font-family:Georgia,'Times New Roman',serif;direction:ltr;unicode-bidi:isolate;font-style:italic;color:var(--navy)}
+.term{font-weight:700;color:var(--navy)}
+
+ul,ol{margin:14px 28px 14px 0;padding:0}
+li{margin:9px 0;color:var(--ink-soft);padding-inline-start:6px}
+li::marker{color:var(--copper)}
+ul.clean{list-style:none;margin-inline-start:0}
+ul.clean li{position:relative;padding-inline-start:26px}
+ul.clean li::before{content:"◆";position:absolute;inset-inline-start:0;top:0;color:var(--gold);font-size:12px}
+
+/* callout boxes */
+.box{border-radius:var(--radius);padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--paper-2);box-shadow:var(--shadow)}
+.box .bt{font-weight:800;font-size:15.5px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.box.warn{background:var(--red-soft);border-color:#E4B9B3}
+.box.warn .bt{color:var(--red)}
+.box.tip{background:var(--green-soft);border-color:#BCD6BC}
+.box.tip .bt{color:var(--green)}
+.box.note{background:#FBF3DD;border-color:#E8D49B}
+.box.note .bt{color:#8A6D12}
+.box.info{background:var(--blue-soft);border-color:#B9CFE6}
+.box.info .bt{color:var(--navy)}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box .ico{width:22px;height:22px;flex:0 0 auto}
+
+.keytake{background:linear-gradient(160deg,#fff,#F3EEE3);border:1px solid var(--copper-soft);border-radius:var(--radius);padding:22px 24px;margin:26px 0}
+.keytake .bt{color:var(--copper);font-weight:800;font-size:15px;margin-bottom:10px;display:flex;gap:8px;align-items:center}
+.keytake ul{margin:0 24px 0 0}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:22px 0;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:540px;background:#fff;font-size:14.5px}
+th,td{padding:13px 16px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.85}
+th{background:var(--navy);color:#fff;font-weight:700;font-size:14px;border-bottom:none}
+tr:nth-child(even) td{background:#FAF8F3}
+td .en,th .en{font-style:normal}
+caption{caption-side:top;text-align:right;font-weight:700;color:var(--navy);padding:0 4px 10px;font-size:15px}
+
+/* comparison / scripts */
+.script{background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--navy);border-radius:10px;padding:6px 20px;margin:16px 0;box-shadow:var(--shadow)}
+.script .turn{margin:14px 0;line-height:2.05}
+.script .who{font-weight:800;color:var(--copper);margin-inline-end:6px}
+.script .who.client{color:var(--navy)}
+.script .stage{font-size:12.5px;color:#8A93A0;font-style:italic;margin-top:4px}
+
+/* decision tree */
+.tree{background:var(--navy-deep);color:#E8EEF5;border-radius:var(--radius);padding:26px 28px;margin:22px 0;box-shadow:var(--shadow)}
+.tree .node{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.15)}
+.tree .node:last-child{border:none}
+.tree .q{font-weight:800;color:var(--gold)}
+.tree .branch{margin:6px 30px 0 0;color:#C7D5E6;font-size:15px}
+.tree .branch b{color:#fff}
+
+/* FAQ */
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden;box-shadow:var(--shadow)}
+details.faq summary{cursor:pointer;padding:15px 20px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;font-size:15.5px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--copper);font-weight:900;font-size:20px;flex:0 0 auto;line-height:1.4}
+details.faq[open] summary::after{content:"–"}
+details.faq summary:hover{background:#FAF8F3}
+details.faq .ans{padding:2px 20px 18px;color:var(--ink-soft);font-size:15px;border-top:1px solid var(--line)}
+.faq-cat{font-size:13px;font-weight:800;color:var(--copper);margin:30px 0 8px;letter-spacing:.4px;text-transform:none;display:flex;align-items:center;gap:8px}
+.faq-cat::before{content:"";width:18px;height:2px;background:var(--gold)}
+
+/* case study */
+.case{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:8px 26px 22px;margin:22px 0;box-shadow:var(--shadow);border-top:5px solid var(--copper)}
+.case h4{color:var(--navy);font-size:18px;margin-top:20px}
+.case .label{font-size:12.5px;font-weight:800;color:var(--copper);letter-spacing:.5px;margin-top:16px}
+
+/* glossary */
+.gloss dl{display:grid;grid-template-columns:1fr;gap:0;margin:18px 0}
+.gloss dt{font-weight:800;color:var(--navy);padding:14px 0 4px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.gloss dt .en{font-style:normal;font-size:14px;background:var(--blue-soft);padding:2px 9px;border-radius:6px;color:var(--navy)}
+.gloss dd{margin:0 0 12px;color:var(--ink-soft);font-size:15px}
+
+/* checklist */
+.checklist{list-style:none;margin-inline-start:0}
+.checklist li{position:relative;padding:8px 34px 8px 0;border-bottom:1px solid var(--line)}
+.checklist li::before{content:"☐";position:absolute;inset-inline-start:0;top:7px;font-size:20px;color:var(--copper)}
+
+/* roadmap day */
+.day{background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 22px 16px;margin:16px 0;box-shadow:var(--shadow)}
+.day .dh{font-weight:800;color:#fff;background:var(--navy);display:inline-block;padding:5px 14px;border-radius:8px;font-size:14px;margin:16px 0 6px}
+
+/* uncertainty pill */
+.verif{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 11px;border-radius:30px;margin-inline-start:8px;vertical-align:middle}
+.verif.v{background:var(--green-soft);color:var(--green)}
+.verif.i{background:#FBF3DD;color:#8A6D12}
+.verif.x{background:var(--red-soft);color:var(--red)}
+
+/* footer */
+footer{background:var(--navy-deep);color:#A9BACF;padding:40px 60px;font-size:13.5px;line-height:2}
+footer b{color:#fff}
+footer a{color:var(--gold);text-decoration:none}
+.legal{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#7E90A6;font-style:italic}
+
+/* back to top */
+#toTop{position:fixed;inset-block-end:24px;inset-inline-start:24px;background:var(--copper);color:#fff;border:none;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s;z-index:30}
+#toTop.show{opacity:1;pointer-events:auto}
+
+/* responsive */
+@media (max-width:980px){
+  .sidebar{display:none;position:fixed;top:0;inset-inline-start:0;z-index:45;width:84%;max-width:330px;box-shadow:0 0 40px rgba(0,0,0,.4)}
+  .sidebar.open{display:block}
+  .scrim.open{display:block}
+  .topbar{display:flex}
+  .hero{padding:42px 22px 36px}
+  .wrap{padding:0 22px}
+  footer{padding:34px 22px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(odd){border-inline-start:none}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  h3{font-size:19px}
+  .hero h1{font-size:25px}
+  .part-head{flex-wrap:wrap;gap:10px}
+}
+
+/* print */
+@media print{
+  .sidebar,.topbar,.scrim,#toTop,.hero .meta{display:none!important}
+  .content{padding:0}
+  .wrap{padding:0}
+  body{background:#fff;font-size:12pt;line-height:1.7}
+  section.part{page-break-inside:auto;padding:18px 0}
+  .box,.case,.day,table{page-break-inside:avoid}
+  details.faq[open] .ans,details.faq .ans{display:block}
+  details.faq summary::after{display:none}
+  .hero{background:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h2>راهنمای مشاور 4 Pillars</h2>
+  <button class="menu-btn" id="menuBtn" aria-label="باز کردن فهرست">☰ فهرست</button>
+</div>
+<div class="scrim" id="scrim"></div>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="pillars"><span></span><span></span><span></span><span></span></div>
+      <h1>راهنمای جامع مشاور WFG</h1>
+      <div class="sub">4 Pillars و راهکارهای بدهی در کانادا</div>
+    </div>
+    <nav class="toc" id="toc">
+      <a href="#intro"><span class="n">۰۰</span>مقدمه و راهنمای استفاده</a>
+      <a href="#p1"><span class="n">۰۱</span>معرفی شرکت 4 Pillars</a>
+      <a href="#p2"><span class="n">۰۲</span>کاتالوگ کامل خدمات</a>
+      <a href="#p3"><span class="n">۰۳</span>راهکارهای بدهی در کانادا</a>
+      <a href="#p3b"><span class="n">۰۳+</span>آموزش عمیق صنعت</a>
+      <a href="#p4"><span class="n">۰۴</span>مقایسه با سایر نهادها</a>
+      <a href="#p5"><span class="n">۰۵</span>مسیر کامل مشتری</a>
+      <a href="#p6"><span class="n">۰۶</span>دسته‌بندی انواع بدهی</a>
+      <a href="#p7"><span class="n">۰۷</span>چارچوب ارجاع برای مشاور</a>
+      <a href="#p8"><span class="n">۰۸</span>نقش مشاور مالی WFG</a>
+      <a href="#p9"><span class="n">۰۹</span>انطباق و مدیریت ریسک</a>
+      <a href="#p10"><span class="n">۱۰</span>گفت‌وگو با مشتری (اسکریپت)</a>
+      <a href="#p11"><span class="n">۱۱</span>چک‌لیست‌های مشاور</a>
+      <a href="#p12"><span class="n">۱۲</span>پرسش‌های متداول (FAQ)</a>
+      <a href="#p13"><span class="n">۱۳</span>مطالعات موردی</a>
+      <a href="#p14"><span class="n">۱۴</span>واژه‌نامه انگلیسی–فارسی</a>
+      <a href="#p15"><span class="n">۱۵</span>نقشه‌راه یادگیری مشاور</a>
+      <a href="#sources"><span class="n">▣</span>منابع و استنادها</a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="hero" id="top">
+      <span class="eyebrow">راهنمای عملیاتی و آموزشی · نسخه‌ی ۱۴۰۵</span>
+      <h1>راهنمای جامع مشاور <span class="accent">WFG</span> برای کار با <span class="accent">4 Pillars</span> و راهکارهای بدهی در کانادا</h1>
+      <p class="lead">یک کتابچه‌ی عملیاتی واقعی — نه یک گزارش پژوهشی سطحی — برای مشاور مالی WFG که می‌خواهد بداند چه زمانی و چگونه مشکلات بدهی مشتری را شناسایی کند، او را آموزش دهد، و در چارچوب مقررات کانادا و سیاست‌های WFG به‌درستی به <span class="en">4 Pillars</span> ارجاع دهد.</p>
+      <div class="meta">
+        <span>۱۵ بخش جامع</span>
+        <span>اسکریپت‌های دوزبانه</span>
+        <span>۵۰+ پرسش متداول</span>
+        <span>چک‌لیست‌های انطباق</span>
+        <span>نقشه‌راه ۷ / ۳۰ / ۹۰ روزه</span>
+      </div>
+    </header>
+    <div class="stats">
+      <div><b>۵۱</b><small>دفتر در سراسر کانادا</small></div>
+      <div><b>۵۰٬۰۰۰+</b><small>خانواده‌ی کمک‌گرفته (سالانه)</small></div>
+      <div><b>۳۰۰M$+</b><small>بدهی مصرفی حل‌شده در سال</small></div>
+      <div><b>۴٫۹/۵</b><small>امتیاز در Trustpilot (۳٬۶۶۸ نظر)</small></div>
+    </div>
+
+    <div class="wrap">
+
+    <!-- ============ INTRO ============ -->
+    <section class="part" id="intro">
+      <div class="part-head"><span class="pn">۰۰</span><h2 class="part-title">مقدمه و راهنمای استفاده از این کتابچه</h2></div>
+      <p class="lead-p">این کتابچه برای مشاوران مالی WFG در کانادا نوشته شده است؛ کسانی که در جلسات روزمره با مشتریان روبه‌رو می‌شوند و باید بتوانند نشانه‌های فشار بدهی را تشخیص دهند و مشتری را — بدون عبور از مرزهای حرفه‌ای و قانونی خود — به یک نهاد متخصص ارجاع دهند.</p>
+
+      <div class="box info">
+        <div class="bt">🎯 هدف این کتابچه</div>
+        <p>تبدیل یک مشاور تازه‌کار به فردی که می‌تواند با اطمینان: (۱) موقعیت‌های بدهی را شناسایی کند، (۲) مشتری را به‌صورت آموزشی و نه مشاوره‌ی تخصصی راهنمایی کند، (۳) ارجاع منطبق با مقررات به <span class="en">4 Pillars</span> انجام دهد، و (۴) رابطه‌ی بلندمدت مالی را پس از حل بدهی بازیابی کند.</p>
+      </div>
+
+      <h3>چارچوب راستی‌آزمایی اطلاعات</h3>
+      <p>در سراسر این کتابچه، هر ادعا با یکی از این سه برچسب مشخص شده است تا شما همیشه بدانید بنیان آن چیست:</p>
+      <ul class="clean">
+        <li><span class="verif v">✓ تأییدشده</span> واقعیتی که از منابع عمومی معتبر (وب‌سایت رسمی 4 Pillars، مقررات دولتی، منابع رسمی) قابل راستی‌آزمایی است.</li>
+        <li><span class="verif i">≈ استنباط منطقی</span> نتیجه‌گیری معقول بر پایه‌ی شواهد عمومی، اما نه نقل مستقیم.</li>
+        <li><span class="verif x">✕ نیازمند دسترسی داخلی</span> اطلاعاتی که فقط از طریق منابع داخلی WFG یا 4 Pillars در دسترس است و به‌صورت عمومی قابل تأیید نیست.</li>
+      </ul>
+
+      <div class="box warn">
+        <div class="bt">⚠ سلب مسئولیت مهم</div>
+        <p>این سند صرفاً برای مقاصد آموزشی و مرجع تهیه شده است. این سند مشاوره‌ی حقوقی، مالیاتی، ورشکستگی یا انطباق (compliance) محسوب نمی‌شود. مشاوران باید همه‌ی الزامات انطباق را با نهاد ناظر استانی خود و دپارتمان انطباق WFG راستی‌آزمایی کنند. هیچ سیاست داخلی محرمانه‌ای در این سند ساخته یا حدس زده نشده است.</p>
+      </div>
+
+      <div class="box note">
+        <div class="bt">🔎 روش پژوهش این نسخه</div>
+        <p>این نسخه پس از پژوهش مستقل و چندمنبعی به‌روزرسانی شده است؛ شامل صفحات رسمی ۴ پیلرز (About, Who We Are, Debt Services, Locations)، منابع دولتی کانادا (<span class="en">OSB / ISED</span>)، انجمن حرفه‌ای <span class="en">CAIRP</span>، دفاتر اعتباری (<span class="en">Equifax</span>)، و منابع آموزشی LIT. هرجا داده‌ای فقط بازاریابی بوده یا قابل راستی‌آزمایی عمومی نبوده، با برچسب مناسب مشخص شده است. اطلاعات داخلی WFG ساخته یا حدس زده نشده است.</p>
+      </div>
+
+      <div class="keytake">
+        <div class="bt">◆ سه اصل طلایی که در کل کتابچه تکرار می‌شوند</div>
+        <ul class="clean">
+          <li><strong>شما آموزش می‌دهید و شناسایی می‌کنید — مشاوره‌ی ورشکستگی نمی‌دهید.</strong> مشاوره‌ی رسمی فقط بر عهده‌ی <span class="en">Licensed Insolvency Trustee</span> است.</li>
+          <li><strong>پیش از هر ارجاع، رضایت صریح مشتری برای اشتراک‌گذاری اطلاعات الزامی است</strong> (طبق <span class="en">PIPEDA</span> و قوانین استانی).</li>
+          <li><strong>هرگز فقط یک گزینه را تنها راه معرفی نکنید.</strong> مشتری حق دارد همه‌ی گزینه‌ها را بشناسد.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- ============ PART 1 ============ -->
+    <section class="part" id="p1">
+      <div class="part-head"><span class="pn">۰۱</span><h2 class="part-title">معرفی شرکت 4 Pillars</h2></div>
+      <p class="lead-p">۴ پیلرز (<span class="en">4 Pillars Financial Wellness Advocates</span>) یک شرکت کانادایی حوزه‌ی کمک به بدهی است که خود را «مدافع بدهکار» (<span class="en">advocate for the debtor</span>) معرفی می‌کند — نه نماینده‌ی طلبکار.</p>
+
+      <h3>تاریخچه و فلسفه‌ی بنیادین</h3>
+      <p>۴ پیلرز در سال <strong>۲۰۰۲</strong> تأسیس شد <span class="verif v">✓ تأییدشده</span> و به گفته‌ی خود، به «بزرگ‌ترین و معتبرترین شرکت کانادا در زمینه‌ی پشتیبانی و آموزش برای حل مشکلات بدهی و اعتبار» تبدیل شده است. دفتر مرکزی آن در <strong>ونکوور (پورت کوکیتلام، بریتیش کلمبیا)</strong> قرار دارد <span class="verif v">✓ تأییدشده</span>. بنیان‌گذار و چهره‌ی شناخته‌شده‌ی آن <span class="term">Paul Murphy</span> است که در LinkedIn، ۴ پیلرز را «بزرگ‌ترین شرکت مستقل دفاع از بدهکار در کانادا» توصیف می‌کند <span class="verif v">✓ تأییدشده</span> و نویسنده‌ی کتاب <span class="en">Beating the Debt Game</span> است.</p>
+      <p>فلسفه‌ی اصلی شرکت در یک جمله خلاصه می‌شود: صنعت بدهی با زبان پیچیده و فرایندهای گیج‌کننده به‌نفع طلبکاران طراحی شده و کانادایی‌ها را در بدهی نگه می‌دارد — و ۴ پیلرز قصد دارد این موازنه را با آموزش و تحلیل مستقل تغییر دهد <span class="verif v">✓ تأییدشده</span>.</p>
+
+      <div class="box note">
+        <div class="bt">📖 نقل‌قول کلیدی از صفحه‌ی About</div>
+        <p>«ما معتقدیم کانادایی‌ها به‌ناحق از زبان پیچیده و فرایندهای گیج‌کننده‌ی صنعت بدهی رنج می‌برند. این وضعیت به‌نفع طلبکاران کار می‌کند... ما از آموزش و تخصص صنعتی خود استفاده می‌کنیم تا کانادایی‌ها را به راه‌حل‌هایی هدایت کنیم که به‌نفع خودشان است — نه راه‌حل‌هایی که به‌نفع طلبکاران است.» <span class="verif v">✓ تأییدشده</span></p>
+      </div>
+
+      <h3>مأموریت و چشم‌انداز</h3>
+      <ul>
+        <li><strong>مأموریت:</strong> کمک به کانادایی‌ها برای یافتن مؤثرترین راه‌حل مدیریت بدهی غیرقابل‌کنترل و بازسازی اعتبار، از طریق تخصص، راهنمایی و تحلیل مستقل بر پایه‌ی شرایط منحصربه‌فرد هر بدهکار <span class="verif v">✓ تأییدشده</span>.</li>
+        <li><strong>چشم‌انداز:</strong> حرکت مشتری از بحران مالی به ثروت‌آفرینی (<span class="en">financial crisis to wealth creation</span>) و در نهایت دستیابی به رؤیاهایی مانند خانه‌دار شدن <span class="verif v">✓ تأییدشده</span>.</li>
+      </ul>
+
+      <h3>رهبری و ساختار</h3>
+      <ul class="clean">
+        <li><strong>بنیان‌گذار/چهره‌ی کلیدی:</strong> <span class="en">Paul Murphy</span> (منطقه‌ی متروپولیتن ونکوور).</li>
+        <li><strong>دفتر مرکزی:</strong> پورت کوکیتلام، بریتیش کلمبیا.</li>
+        <li><strong>مدل سازمانی:</strong> شبکه‌ی ملی از مشاوران/فرنچایزهای مستقل (<span class="en">independent consultants / franchise</span>) <span class="verif v">✓ تأییدشده</span>؛ تعداد دفاتر فعال در منابع رسمی بین «۵۱ دفتر» (صفحه‌ی About) تا «۸۰+ موقعیت فرنچایز» (اظهارات بنیان‌گذار) ذکر شده است <span class="verif i">≈ استنباط منطقی</span> — تفاوت احتمالاً ناشی از تمایز «دفاتر خدمات‌دهنده» و «موقعیت‌های فرنچایز» است.</li>
+      </ul>
+
+      <h3>حضور جغرافیایی و ابعاد شرکت</h3>
+      <p>۴ پیلرز در ۵۱ دفتر سراسر کانادا خدمات می‌دهد، از جمله تورنتو، ونکوور، اتاوا، کلگری، مونترال، ادمونتون، هلیفکس، لندن، وینیپگ، فردریکتون، سنت‌جانز و ویکتوریا — و نیز شهرها و مناطق روستایی <span class="verif v">✓ تأییدشده</span>.</p>
+      <div class="tablewrap"><table>
+        <caption>آمار عمومی تأییدشده‌ی 4 Pillars</caption>
+        <thead><tr><th>شاخص</th><th>مقدار</th><th>منبع</th></tr></thead>
+        <tbody>
+          <tr><td>سال تأسیس</td><td>۲۰۰۲</td><td>صفحه‌ی About</td></tr>
+          <tr><td>دفتر مرکزی</td><td>پورت کوکیتلام، BC</td><td>صفحه‌ی About / Who We Are</td></tr>
+          <tr><td>تعداد دفاتر</td><td>۵۱ دفتر در سراسر کانادا</td><td>صفحه‌ی About</td></tr>
+          <tr><td>خانواده‌های کمک‌گرفته</td><td>۵۰٬۰۰۰+ خانواده</td><td>صفحه‌ی About</td></tr>
+          <tr><td>بدهی مصرفی حل‌شده</td><td>بیش از ۳۰۰ میلیون دلار در سال</td><td>صفحه‌ی About</td></tr>
+          <tr><td>نظرات مستقل تأییدشده</td><td>۳٬۰۰۰+ (Trustpilot)</td><td>Trustpilot</td></tr>
+          <tr><td>امتیاز Trustpilot</td><td>۴٫۹ از ۵ («Excellent»)، بر پایه‌ی ۳٬۶۶۸ نظر</td><td>Trustpilot</td></tr>
+          <tr><td>مشتریانی که قبلاً ورشکست شده‌اند</td><td>۱۳٫۵٪</td><td>صفحه‌ی About</td></tr>
+          <tr><td>نرخ ورشکستگی دوم در میان مشتریان</td><td>کمتر از ۲٪ (در مقابل ۲۴٪ میانگین ملی)</td><td>وب‌سایت رسمی</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>ابتکار سواد مالی: برنامه‌ی EmpowerU</h3>
+      <p>۴ پیلرز در ایجاد یک برنامه‌ی سواد مالی جامعه‌محور به‌نام <span class="en">EmpowerU</span> مشارکت داشته است <span class="verif v">✓ تأییدشده</span>. در این برنامه، پس‌انداز شرکت‌کنندگان با نسبت ۲:۱ تطبیق داده می‌شود و موضوعاتی مانند بودجه‌بندی، اعتبار، هدف‌گذاری، پیشگیری از کلاهبرداری، کاهش بدهی و سرمایه‌گذاری آموزش داده می‌شود.</p>
+      <div class="box info">
+        <div class="bt">💡 نتایج تأییدشده‌ی EmpowerU</div>
+        <ul class="clean">
+          <li>۲۰٫۵٪ شرکت‌کنندگان شغل پیدا کردند.</li>
+          <li>۹۷٫۸٪ اعتمادبه‌نفس خود در مدیریت پول را افزایش دادند.</li>
+          <li>۵۰٫۸٪ در دفاع از خود نزد مؤسسات مالی راحت‌تر شدند.</li>
+          <li>۹۱٫۱٪ اعتمادبه‌نفس کلی خود را افزایش دادند.</li>
+          <li>۱۰۵٪ بازده اجتماعی سرمایه‌گذاری (<span class="en">social ROI</span>) در جامعه.</li>
+        </ul>
+        <p>برنامه از طریق ۱۱ سازمان غیرانتفاعی و با همکاری <span class="en">ATB Financial، United Way، City of Edmonton، EPCOR، Government of Alberta</span> و ۴ پیلرز اجرا شده است.</p>
+      </div>
+
+      <h3>مدل کسب‌وکار و مدل درآمدی</h3>
+      <p>۴ پیلرز اعلام می‌کند که <strong>هیچ‌گاه هزینه‌ی مشاوره‌ی بدهی (<span class="en">debt advisory fee</span>) یا هزینه‌ی پیش‌پرداخت دریافت نمی‌کند</strong> <span class="verif v">✓ تأییدشده</span>. منطق آن این است که «هزینه نباید مانعی برای دریافت کمک واقعی باشد.»</p>
+      <div class="box info">
+        <div class="bt">💡 نکته‌ی مهم درباره‌ی مدل درآمدی</div>
+        <p>طبق وب‌سایت رسمی، مرحله‌ی اول (یافتن مؤثرترین راه‌حل بدهی) بدون هزینه‌ی پیش‌پرداخت است؛ اما خدمت جداگانه‌ای به‌نام <span class="en">Financial Advocacy and Wellness</span> (بازسازی اعتبار و آموزش مالی) از طریق شبکه‌ی مشاوران مستقل ارائه می‌شود که <strong>خدمتی مبتنی بر هزینه (<span class="en">fee-based</span>) است</strong> و جزئیات آن در جلسه‌ی مشاوره توضیح داده می‌شود <span class="verif v">✓ تأییدشده</span>. جزئیات دقیق ساختار درآمدی و کارمزدهای ارجاع به WFG، اطلاعات داخلی است <span class="verif x">✕ نیازمند دسترسی داخلی</span>.</p>
+      </div>
+
+      <h3>ارزش‌های محوری و جایگاه در صنعت</h3>
+      <ul class="clean">
+        <li><strong>استقلال:</strong> «۴ پیلرز برای بدهکار وکالت می‌کند، نه طلبکار» — به گفته‌ی خودشان یکی از معدود شرکت‌هایی با این رویکرد <span class="verif v">✓ تأییدشده</span>.</li>
+        <li><strong>آموزش‌محوری:</strong> همه‌ی دفاتر یک «جلسه‌ی اطلاع‌رسانی» (<span class="en">information session</span>) ارائه می‌دهند که همه‌ی گزینه‌ها را آموزش می‌دهد.</li>
+        <li><strong>شفافیت:</strong> ۳٬۰۰۰+ نظر مستقل عمومی در Trustpilot.</li>
+        <li><strong>تمرکز بر بازیابی بلندمدت:</strong> نه فقط حل بحران، بلکه بازسازی اعتبار و جلوگیری از ورشکستگی دوم.</li>
+      </ul>
+      <div class="keytake">
+        <div class="bt">◆ نکات کلیدی بخش ۱</div>
+        <ul class="clean">
+          <li>۴ پیلرز یک «مدافع بدهکار» مستقل است، نه طلبکار و نه وام‌دهنده.</li>
+          <li>مشاوره‌ی اولیه‌ی بدهی رایگان است؛ خدمت بازسازی اعتبار هزینه‌بر است.</li>
+          <li>ابعاد و سابقه‌ی شرکت آن را به یک شریک ارجاعی معتبر برای WFG تبدیل کرده است.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PART 2 ============ -->
+    <section class="part" id="p2">
+      <div class="part-head"><span class="pn">۰۲</span><h2 class="part-title">کاتالوگ کامل خدمات</h2></div>
+      <p class="lead-p">۴ پیلرز مجموعه‌ای از خدمات آموزشی، مشاوره‌ای و بازسازی مالی ارائه می‌دهد. مهم است که مشاور WFG بداند ۴ پیلرز <strong>خودش یک <span class="en">Licensed Insolvency Trustee</span> نیست</strong>؛ بلکه بدهکار را آموزش می‌دهد و در صورت لزوم با یک LIT همکاری می‌کند.</p>
+
+      <h3>نمای کلی خدمات اصلی</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>خدمت</th><th>هدف</th><th>پروفایل مشتری معمول</th></tr></thead>
+        <tbody>
+          <tr><td>بازساختاردهی بدهی (<span class="en">Debt Restructuring</span>)</td><td>کاهش چشمگیر بدهی و کاهش پرداخت ماهانه</td><td>فردی با چند بدهی غیرقابل‌مدیریت و فشار جریان نقدی</td></tr>
+          <tr><td>آموزش پیشنهاد مصرف‌کننده (<span class="en">Consumer Proposal</span>)</td><td>توضیح فرایند توافق رسمی با طلبکاران از طریق LIT</td><td>فردی که توان پرداخت بخشی از بدهی را دارد و می‌خواهد از ورشکستگی پرهیز کند</td></tr>
+          <tr><td>تجمیع بدهی (<span class="en">Debt Consolidation</span>)</td><td>یکپارچه‌سازی چند بدهی در یک پرداخت با بهره‌ی کمتر</td><td>فردی با اعتبار قابل‌قبول و درآمد پایدار</td></tr>
+          <tr><td>گزینه‌های بازتأمین مالی (<span class="en">Refinancing</span>)</td><td>استفاده از دارایی (مثل خانه) برای کاهش هزینه‌ی بدهی</td><td>صاحب‌خانه با ارزش خالص (equity) کافی</td></tr>
+          <tr><td>بازسازی اعتبار (<span class="en">Credit Rebuilding</span>)</td><td>ترمیم رتبه‌ی اعتباری پس از بحران (خدمت هزینه‌بر)</td><td>فردی پس از پیشنهاد مصرف‌کننده یا ورشکستگی</td></tr>
+          <tr><td>آموزش مالی و بودجه‌بندی</td><td>آموزش مدیریت پول و جلوگیری از بحران دوباره</td><td>همه‌ی مشتریان</td></tr>
+          <tr><td>راهنمایی پیرامون ورشکستگی (<span class="en">Bankruptcy</span>)</td><td>آموزش — نه اجرا — درباره‌ی ورشکستگی شخصی</td><td>فردی با بدهی بسیار سنگین و بدون توان بازپرداخت</td></tr>
+          <tr><td>مذاکره با طلبکاران (<span class="en">Creditor Negotiations</span>)</td><td>راهنمایی برای کاهش یا توافق مستقیم با طلبکار</td><td>فردی با بدهی کم تا متوسط و امکان توافق</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="box note">
+        <div class="bt">📖 ساختار استاندارد توضیح هر خدمت</div>
+        <p>برای هر خدمت، ساختار یکسانی ارائه شده تا بتوانید سریع به آن مراجعه کنید: <strong>هدف · شرایط واجد بودن · مزایا · محدودیت‌ها · ریسک‌ها · پروفایل مشتری · مثال عملی</strong>. این چارچوب به شما کمک می‌کند در گفت‌وگو با مشتری منسجم و دقیق باشید.</p>
+      </div>
+
+      <!-- Service 1 -->
+      <h3>۱) بازساختاردهی بدهی (Debt Restructuring)</h3>
+      <p>طبق وب‌سایت رسمی، بازساختاردهی می‌تواند «بدهی را به‌طور چشمگیر کاهش دهد و پرداخت‌های ماهانه را به‌شدت پایین بیاورد و فشار مالی را بردارد» <span class="verif v">✓ تأییدشده</span>. این یک اصطلاح چتری است که می‌تواند شامل پیشنهاد مصرف‌کننده، تجمیع یا بازتأمین باشد.</p>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>تبدیل بدهی غیرقابل‌بازپرداخت به یک برنامه‌ی قابل‌مدیریت و کاهش فشار جریان نقدی.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>وجود چند بدهی، فشار پرداخت ماهانه، و تمایل به قرار دادن مدیریت بدهی در برنامه‌ی بلندمدت.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>کاهش بدهی، کاهش پرداخت ماهانه، رهایی از استرس مداوم، امکان بازپرداخت بدهی‌ای که زمانی غیرممکن به‌نظر می‌رسید.</td></tr>
+          <tr><td><strong>محدودیت‌ها</strong></td><td>راه‌حلِ همه نیست؛ نوع بازساختاردهی بستگی به ترکیب بدهی و درآمد دارد.</td></tr>
+          <tr><td><strong>ریسک‌ها</strong></td><td>«وقتی تصمیم می‌گیرید با بدهی روبه‌رو شوید، رتبه‌ی اعتباری شما آسیب می‌بیند؛ اما با برنامه‌ی درست، این آسیب به حداقل می‌رسد» <span class="verif v">✓ تأییدشده</span>. ضربه‌ی کوتاه‌مدت اغلب ارزشش را دارد.</td></tr>
+          <tr><td><strong>پروفایل مشتری</strong></td><td>فردی که هزینه‌ی سرویس بدهی مانع مشارکت در RESP یا RRSP فرزندانش شده است.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>خانواده‌ای با چند کارت و وام؛ پس از بازساختاردهی، پرداخت ماهانه از ۲٬۶۰۰ به ۶۰۰ دلار کاهش یافت و ۲٬۰۰۰ دلار جریان نقدی آزاد شد.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 2 -->
+      <h3>۲) آموزش پیشنهاد مصرف‌کننده (Consumer Proposal)</h3>
+      <p>۴ پیلرز فرایند پیشنهاد مصرف‌کننده را <strong>آموزش</strong> می‌دهد و هماهنگ می‌کند، اما ثبت رسمی فقط توسط یک LIT انجام می‌شود.</p>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>توافق رسمی تحت <span class="en">BIA</span> برای بازپرداخت بخشی از بدهی طی حداکثر ۵ سال و بخشودگی مابقی.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>بدهی بدون‌تضمین معمولاً بین ۱۰هزار تا ۲۵۰هزار دلار، با درآمد پایدار برای بازپرداخت بخشی.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>توقف پیگیری قانونی و بهره، حفظ دارایی‌ها (برخلاف ورشکستگی)، تأثیر اعتباری کمتر از ورشکستگی.</td></tr>
+          <tr><td><strong>محدودیت‌ها</strong></td><td>نیازمند پذیرش اکثریت طلبکاران؛ فقط برای بدهی بدون‌تضمین کاربرد دارد.</td></tr>
+          <tr><td><strong>ریسک‌ها</strong></td><td>ثبت در گزارش اعتباری (رتبه‌ی R7) تا ۳ سال پس از تکمیل؛ عدم پایبندی به پرداخت‌ها می‌تواند proposal را باطل کند.</td></tr>
+          <tr><td><strong>پروفایل مشتری</strong></td><td>فردی که توان پرداخت کامل ندارد اما درآمد پایدار دارد و می‌خواهد از ورشکستگی پرهیز کند.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>زوجی با ۶۰هزار دلار بدهی کارت؛ پس از proposal، بدهی به ۲۰هزار دلار و پرداخت ماهانه به ۳۵۰ دلار کاهش یافت.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 3 -->
+      <h3>۳) تجمیع بدهی (Debt Consolidation)</h3>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>ادغام چند بدهی در یک وام واحد با یک پرداخت ماهانه، اغلب با بهره‌ی پایین‌تر.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>رتبه‌ی اعتباری قابل‌قبول و درآمد پایدار برای دریافت وام تجمیع.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>ساده‌سازی پرداخت‌ها، کاهش بهره‌ی کل، حفظ نسبی رتبه‌ی اعتباری در صورت پرداخت منظم.</td></tr>
+          <tr><td><strong>محدودیت‌ها</strong></td><td>نیازمند صلاحیت اعتباری؛ اگر عادت‌های خرج‌کردن اصلاح نشود، بدهی دوباره انباشته می‌شود.</td></tr>
+          <tr><td><strong>ریسک‌ها</strong></td><td>تبدیل بدهی بدون‌تضمین به تضمین‌شده (مثلاً با وثیقه‌گذاری خانه) ریسک از دست دادن دارایی را ایجاد می‌کند.</td></tr>
+          <tr><td><strong>پروفایل مشتری</strong></td><td>فردی با اعتبار سالم که چند بدهی پراکنده با بهره‌ی بالا دارد.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>فردی با سه کارت اعتباری با بهره‌ی ۱۹٪؛ تجمیع در یک وام با بهره‌ی ۹٪ پرداخت ماهانه را پایین آورد.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 4 -->
+      <h3>۴) بازتأمین مالی (Refinancing)</h3>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>استفاده از ارزش خالص دارایی (به‌ویژه خانه) برای جایگزینی بدهی پرهزینه با بدهی کم‌هزینه‌تر.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>مالکیت دارایی با <span class="en">equity</span> کافی و صلاحیت اعتباری.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>کمترین تأثیر اعتباری در میان گزینه‌ها، نرخ بهره‌ی پایین‌تر، حفظ خانه.</td></tr>
+          <tr><td><strong>محدودیت‌ها</strong></td><td>فقط برای صاحبان دارایی؛ نیازمند ارزیابی و واجد شرایط بودن برای وام مسکن.</td></tr>
+          <tr><td><strong>ریسک‌ها</strong></td><td>تبدیل بدهی بدون‌تضمین به بدهی تضمین‌شده روی خانه؛ در صورت نکول، خانه در خطر است.</td></tr>
+          <tr><td><strong>پروفایل مشتری</strong></td><td>صاحب‌خانه‌ای با equity که می‌خواهد بدهی کارت پرهزینه را پاک کند.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>طبق وب‌سایت رسمی: «بهترین گزینه ممکن است تجمیع بدهی از طریق بازتأمین مالی باشد» <span class="verif v">✓ تأییدشده</span>.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 5 -->
+      <h3>۵) بازسازی اعتبار و خدمت Financial Advocacy &amp; Wellness</h3>
+      <div class="box info">
+        <div class="bt">💡 این خدمت هزینه‌بر است</div>
+        <p>طبق وب‌سایت رسمی، خدمت <span class="en">Financial Advocacy and Wellness</span> «بازسازی اعتبار و آموزش مالی جامع ارائه می‌دهد و یک خدمت مبتنی بر هزینه (<span class="en">fee-based</span>) است که در جلسه‌ی مشاوره توضیح داده می‌شود» <span class="verif v">✓ تأییدشده</span>. این را همیشه به مشتری شفاف کنید.</p>
+      </div>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>ترمیم رتبه‌ی اعتباری و آموزش مالی برای جلوگیری از بحران دوباره (به‌ویژه ورشکستگی دوم).</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>فردی که از بحران عبور کرده (مثلاً پس از proposal یا ورشکستگی) و می‌خواهد اعتبار بسازد.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>اطمینان از صحت اطلاعات گزارش اعتباری، ابزار و آموزش برای بازسازی، کاهش چشمگیر ریسک ورشکستگی دوم.</td></tr>
+          <tr><td><strong>محدودیت‌ها / ریسک‌ها</strong></td><td>هزینه‌بر؛ نتیجه تدریجی است و تضمین زمان دقیق وجود ندارد.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>به‌دلیل برنامه‌های آموزش و توان‌بخشی، کمتر از ۲٪ مشتریان ۴ پیلرز دچار ورشکستگی دوم می‌شوند (در مقابل ۲۴٪ میانگین ملی) <span class="verif v">✓ تأییدشده</span>.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 6 -->
+      <h3>۶) راهنمایی پیرامون ورشکستگی (Bankruptcy)</h3>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>آموزش — نه اجرا — درباره‌ی ورشکستگی به‌عنوان آخرین گزینه؛ اجرای رسمی فقط با LIT.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>ناتوانی کامل در بازپرداخت بدهی از طریق سایر گزینه‌ها.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>پاک‌سازی بدهی واجد شرایط، توقف پیگیری طلبکاران، شروع تازه‌ی مالی.</td></tr>
+          <tr><td><strong>محدودیت‌ها</strong></td><td>برخی بدهی‌ها (مثل وام دانشجویی زیر ۷ سال، بدهی ناشی از تقلب) پاک نمی‌شوند.</td></tr>
+          <tr><td><strong>ریسک‌ها</strong></td><td>شدیدترین تأثیر اعتباری (رتبه‌ی R9، ۶ تا ۷ سال)؛ احتمال واگذاری دارایی‌های غیرمعاف.</td></tr>
+          <tr><td><strong>مثال عملی</strong></td><td>فردی با بدهی بسیار سنگین و بدون درآمد پایدار؛ ۴ پیلرز پیامدها و دارایی‌های معاف (مثل RRSP) را توضیح می‌دهد و او را به LIT ارجاع می‌دهد.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 7 -->
+      <h3>۷) مذاکره با طلبکاران (Creditor Negotiations)</h3>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><td><strong>هدف</strong></td><td>راهنمایی مشتری برای توافق مستقیم با طلبکاران جهت کاهش بدهی، بدون نیاز به فرایند رسمی.</td></tr>
+          <tr><td><strong>شرایط واجد بودن</strong></td><td>بدهی کم تا متوسط با امکان توافق و طلبکارانی که مایل به مذاکره‌اند.</td></tr>
+          <tr><td><strong>مزایا</strong></td><td>طبق وب‌سایت رسمی: «ممکن است فرصتی برای شما باشد که مستقیماً با طلبکاران برای کاهش بدهی برخورد کنید» <span class="verif v">✓ تأییدشده</span>. تأثیر اعتباری متغیر و گاه کمتر.</td></tr>
+          <tr><td><strong>محدودیت‌ها / ریسک‌ها</strong></td><td>تضمینی برای پذیرش طلبکار وجود ندارد؛ نتیجه به مهارت مذاکره و شرایط بستگی دارد.</td></tr>
+          <tr><td><strong>پروفایل مشتری</strong></td><td>فردی با چند بدهی کوچک که هنوز به مرحله‌ی بحران حاد نرسیده است.</td></tr>
+        </tbody>
+      </table></div>
+
+      <!-- Service 8 -->
+      <h3>۸) جلسه‌ی اطلاع‌رسانی و آموزش مالی (هسته‌ی مدل)</h3>
+      <p>همه‌ی دفاتر ۴ پیلرز یک جلسه‌ی اطلاع‌رسانی ارائه می‌دهند (حضوری یا مجازی) که در آن موضوعات زیر پوشش داده می‌شود <span class="verif v">✓ تأییدشده</span>:</p>
+      <ul class="clean">
+        <li>اطلاعات تفصیلی درباره‌ی <span class="en">consumer proposals</span>، تجمیع بدهی، بازتأمین مالی و حتی ورشکستگی.</li>
+        <li>توضیح تأثیر این گزینه‌ها بر رتبه‌ی اعتباری و توان دریافت وام مسکن در آینده.</li>
+        <li>اطلاعات درباره‌ی مسئولیت همسر، وام‌های ضامن‌دار (<span class="en">co-signed</span>) و وام‌های دانشجویی.</li>
+        <li>چگونگی حفظ و بهبود رتبه‌ی اعتباری و قدرت سابقه‌ی اعتباری بر معیشت.</li>
+      </ul>
+
+      <div class="box warn">
+        <div class="bt">⛔ خدماتی که 4 Pillars ارائه نمی‌دهد</div>
+        <ul class="clean">
+          <li>۴ پیلرز <strong>خودش پیشنهاد مصرف‌کننده یا ورشکستگی را اجرا/ثبت نمی‌کند</strong> — این فقط بر عهده‌ی <span class="en">Licensed Insolvency Trustee</span> است.</li>
+          <li>۴ پیلرز <strong>وام‌دهنده یا طلبکار نیست</strong> و وام نقدی نمی‌دهد.</li>
+          <li>۴ پیلرز <strong>مشاوره‌ی حقوقی رسمی</strong> ارائه نمی‌دهد (هرچند به منابعی مانند <span class="en">Legalline.ca</span> ارجاع می‌دهد).</li>
+          <li>این یک آژانس مشاوره‌ی اعتباری غیرانتفاعی (<span class="en">non-profit credit counselling</span>) نیست؛ مدل و رویکرد آن متفاوت است.</li>
+        </ul>
+      </div>
+
+      <div class="keytake">
+        <div class="bt">◆ نکات کلیدی بخش ۲</div>
+        <ul class="clean">
+          <li>۴ پیلرز آموزش‌دهنده و هماهنگ‌کننده است؛ اجرای رسمی ورشکستگی بر عهده‌ی LIT است.</li>
+          <li>جلسه‌ی اطلاع‌رسانی، هسته‌ی مدل آموزش‌محور آن است.</li>
+          <li>تمایز رایگان‌بودن مشاوره از هزینه‌بودن بازسازی اعتبار را همیشه به مشتری شفاف کنید.</li>
+          <li>هر خدمت پروفایل مشتری متفاوتی دارد — تشخیص گزینه بر عهده‌ی متخصص است، نه شما.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="part" id="p3">
+      <div class="part-head"><span class="pn">۰۳</span><h2 class="part-title">راهکارهای بدهی در کانادا — توضیح عمیق</h2></div>
+      <p class="lead-p">برای آنکه بتوانید بدهی را به‌درستی تشخیص دهید و ارجاع دهید، باید همه‌ی گزینه‌های موجود در کانادا را بهتر از مشتری بشناسید. این بخش هر گزینه را به‌صورت مستقل توضیح می‌دهد.</p>
+
+      <div class="tablewrap"><table>
+        <caption>مقایسه‌ی جامع راهکارهای بدهی در کانادا</caption>
+        <thead><tr><th>راهکار</th><th>مجری</th><th>تأثیر بر اعتبار</th><th>مناسب برای</th></tr></thead>
+        <tbody>
+          <tr><td>پیشنهاد مصرف‌کننده <span class="en">(Consumer Proposal)</span></td><td>Licensed Insolvency Trustee</td><td>R7 — متوسط، ۳ سال پس از تکمیل باقی می‌ماند</td><td>بدهی ۱۰هزار تا ۲۵۰هزار دلار، با درآمد پایدار</td></tr>
+          <tr><td>ورشکستگی شخصی <span class="en">(Bankruptcy)</span></td><td>Licensed Insolvency Trustee</td><td>R9 — شدیدترین، ۶ تا ۷ سال</td><td>ناتوانی کامل در بازپرداخت</td></tr>
+          <tr><td>تجمیع بدهی <span class="en">(Debt Consolidation)</span></td><td>بانک / وام‌دهنده</td><td>کم، اگر منظم پرداخت شود</td><td>اعتبار قابل‌قبول، درآمد پایدار</td></tr>
+          <tr><td>بازتأمین مالی <span class="en">(Refinancing)</span></td><td>بانک / کارگزار وام مسکن</td><td>کم</td><td>صاحب‌خانه با equity کافی</td></tr>
+          <tr><td>مشاوره‌ی اعتباری <span class="en">(Credit Counselling)</span></td><td>آژانس (اغلب غیرانتفاعی)</td><td>R7 در طول برنامه‌ی مدیریت بدهی</td><td>بدهی متوسط بدون نیاز به توافق رسمی</td></tr>
+          <tr><td>تسویه‌ی بدهی <span class="en">(Debt Settlement)</span></td><td>شرکت‌های تسویه (با احتیاط)</td><td>منفی، اغلب پرریسک</td><td>گزینه‌ای که باید با احتیاط بررسی شود</td></tr>
+          <tr><td>مذاکره‌ی مستقیم با طلبکار</td><td>خود فرد یا مدافع</td><td>متغیر</td><td>بدهی کم با امکان توافق</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>پیشنهاد مصرف‌کننده (Consumer Proposal)</h3>
+      <p>یک توافق رسمی و قانونی تحت <span class="en">Bankruptcy and Insolvency Act (BIA)</span> که فقط از طریق یک <span class="en">Licensed Insolvency Trustee</span> ثبت می‌شود. بدهکار بخشی از بدهی را طی حداکثر ۵ سال بازپرداخت می‌کند و مابقی بخشوده می‌شود. طلبکاران را از پیگیری قانونی و بهره‌ی بیشتر بازمی‌دارد.</p>
+
+      <h3>ورشکستگی شخصی (Bankruptcy)</h3>
+      <p>آخرین گزینه، برای زمانی که هیچ توان بازپرداختی وجود ندارد. دارایی‌های غیرمعاف (<span class="en">non-exempt</span>) ممکن است واگذار شوند، اما بسیاری از دارایی‌ها (طبق قوانین استانی و <span class="en">BIA</span>) معاف‌اند — از جمله بخش عمده‌ی <span class="en">RRSP</span>.</p>
+
+      <div class="box note">
+        <div class="bt">📊 آماری که باید بدانید</div>
+        <p>طبق وب‌سایت رسمی ۴ پیلرز، پیش‌بینی می‌شود <strong>۲۴٪ کانادایی‌هایی که تحت <span class="en">BIA</span> پرونده تشکیل می‌دهند، ظرف ۱۰ سال برای بار دوم این کار را تکرار کنند</strong> — اما به‌دلیل برنامه‌های آموزش و توان‌بخشی، کمتر از ۲٪ مشتریان ۴ پیلرز دچار ورشکستگی دوم می‌شوند <span class="verif v">✓ تأییدشده</span>. این آمار، ارزش آموزش مستمر را نشان می‌دهد.</p>
+      </div>
+
+      <h3>تجمیع بدهی و بازتأمین مالی</h3>
+      <p>طبق وب‌سایت رسمی، «بهترین گزینه ممکن است تجمیع بدهی از طریق بازتأمین مالی باشد» <span class="verif v">✓ تأییدشده</span>. این گزینه‌ها رتبه‌ی اعتباری را کمتر آسیب می‌زنند، اما نیازمند اعتبار و درآمد قابل‌قبول‌اند.</p>
+
+      <div class="box tip">
+        <div class="bt">✓ نکته‌ی عملی برای مشاور</div>
+        <p>وظیفه‌ی شما تشخیص گزینه‌ی درست نیست — این کار ۴ پیلرز و LIT است. وظیفه‌ی شما این است که <strong>وجود این گزینه‌ها را بدانید</strong> تا بتوانید با اطمینان توضیح دهید که «راه‌حل‌های متعددی وجود دارد و یک متخصص مستقل می‌تواند بهترین را برای شرایط شما پیدا کند.»</p>
+      </div>
+    </section>
+    <!-- ============ PART 3B — DEEP INDUSTRY EDUCATION ============ -->
+    <section class="part" id="p3b">
+      <div class="part-head"><span class="pn">۰۳+</span><h2 class="part-title">آموزش عمیق صنعت — اعسار، وصول و اعتبار در کانادا</h2></div>
+      <p class="lead-p">این بخش بر پایه‌ی منابع دولتی و حرفه‌ای کانادا (<span class="en">OSB / ISED، CAIRP، Equifax</span>) تهیه شده تا شما زیرساخت قانونی و فنی پشت گزینه‌های بدهی را عمیق بفهمید. هدف، تسلط مفهومی است — نه تبدیل شما به متخصص اعسار.</p>
+
+      <h3>چارچوب قانونی: BIA و نقش OSB</h3>
+      <p>هم پیشنهاد مصرف‌کننده و هم ورشکستگی، راهکارهای قانونی تحت <span class="en">Bankruptcy and Insolvency Act (BIA)</span> هستند و توسط <span class="en">Office of the Superintendent of Bankruptcy (OSB)</span> نظارت می‌شوند <span class="verif v">✓ تأییدشده</span>. نکته‌ی حیاتی برای مشاور:</p>
+      <div class="box warn">
+        <div class="bt">⛔ فقط LIT می‌تواند ثبت کند</div>
+        <p>در کانادا، <strong>فقط یک <span class="en">Licensed Insolvency Trustee (LIT)</span> می‌تواند پیشنهاد مصرف‌کننده یا ورشکستگی را به‌صورت قانونی ثبت و اداره کند</strong>. مشاوران اعتباری غیرانتفاعی، شرکت‌های تسویه‌ی بدهی، و سایر متخصصان مالی (از جمله شما) <strong>مجاز به اجرای این برنامه‌ها نیستند</strong> <span class="verif v">✓ تأییدشده</span>. برخلاف آمریکا، حتی یک وکیل هم نمی‌تواند proposal ثبت کند.</p>
+      </div>
+
+      <h3>روند رسمی ثبت (گام‌به‌گام)</h3>
+      <div class="tree">
+        <div class="node"><span class="q">۱ · مشاوره با LIT</span><div class="branch">LIT بدهی، دارایی و درآمد فرد را بررسی می‌کند و گزینه‌ها را توضیح می‌دهد.</div></div>
+        <div class="node"><span class="q">۲ · تهیه‌ی اسناد</span><div class="branch">LIT اسناد لازم را آماده می‌کند و فرد آن‌ها را امضا می‌کند.</div></div>
+        <div class="node"><span class="q">۳ · ثبت الکترونیکی نزد OSB</span><div class="branch">LIT اسناد را به‌صورت الکترونیکی نزد OSB ثبت می‌کند.</div></div>
+        <div class="node"><span class="q">۴ · صدور گواهی و آغاز فرایند رسمی</span><div class="branch">OSB گواهی ثبت صادر می‌کند و «توقف خودکار» (stay of proceedings) آغاز می‌شود.</div></div>
+        <div class="node"><span class="q">۵ · توقف بهره و پیگیری</span><div class="branch">انباشت بهره و اقدامات وصول طلبکاران متوقف می‌شود.</div></div>
+      </div>
+
+      <h3>مقایسه‌ی عمیق: پیشنهاد مصرف‌کننده در برابر ورشکستگی</h3>
+      <div class="tablewrap"><table>
+        <caption>تفاوت‌های کلیدی (بر پایه‌ی OSB، CAIRP و منابع LIT)</caption>
+        <thead><tr><th>معیار</th><th>پیشنهاد مصرف‌کننده</th><th>ورشکستگی شخصی</th></tr></thead>
+        <tbody>
+          <tr><td>ماهیت</td><td>بازپرداخت بخشی از بدهی طی حداکثر ۵ سال</td><td>پاک‌سازی اغلب بدهی‌های واجد شرایط</td></tr>
+          <tr><td>دارایی‌ها</td><td>معمولاً حفظ می‌شوند (خانه، خودرو، پس‌انداز)</td><td>دارایی‌های غیرمعاف ممکن است واگذار شوند</td></tr>
+          <tr><td>سقف بدهی</td><td>۱٬۰۰۰ تا ۲۵۰٬۰۰۰ دلار بدهی بدون‌تضمین (بدون احتساب وام مسکن)</td><td>سقف مشخصی ندارد</td></tr>
+          <tr><td>رأی طلبکاران</td><td>نیازمند پذیرش اکثریت طلبکاران</td><td>نیازی به رأی نیست</td></tr>
+          <tr><td>تأثیر اعتباری</td><td>رتبه‌ی R7؛ ۳ سال پس از تکمیل یا ۶ سال پس از شروع (هرکدام زودتر)</td><td>رتبه‌ی R9؛ شدیدترین، ۶ تا ۷ سال</td></tr>
+          <tr><td>هزینه</td><td>بدون کارمزد جدا؛ فقط پرداخت‌های توافق‌شده‌ی proposal</td><td>تعرفه‌ی دولتی؛ حداقل هزینه‌ی پایه اغلب حدود ۲٬۷۰۰ دلار بسته به درآمد</td></tr>
+          <tr><td>دارایی‌های قابل‌توقیف در ورشکستگی</td><td>—</td><td>وجه نقد، جواهرات، سرمایه‌گذاری در TFSA، بازگشت مالیاتی سال ثبت</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box info">
+        <div class="bt">💡 آمار صنعت (تأییدشده)</div>
+        <p>طبق داده‌ی OSB که توسط <span class="en">CAIRP</span> تحلیل شده، در سه‌ماهه‌ی اول ۲۰۲۶ تعداد <strong>۳۷٬۱۲۱</strong> کانادایی پرونده‌ی اعسار مصرفی تشکیل دادند — افزایش ۸٫۵٪ نسبت به سال پیش <span class="verif v">✓ تأییدشده</span>. همچنین در سال‌های اخیر، بیش از <strong>۷۰٪</strong> اعسارها به‌جای ورشکستگی، پیشنهاد مصرف‌کننده بوده‌اند <span class="verif v">✓ تأییدشده</span>.</p>
+      </div>
+
+      <h3>دارایی‌های معاف (Exempt Assets)</h3>
+      <p>این باور رایج که «در ورشکستگی همه‌چیز را از دست می‌دهید» نادرست است. قوانین فدرال و استانی، طلبکاران را از توقیف همه‌چیز منع می‌کنند و برخی دارایی‌ها معاف‌اند تا فرد بتواند استاندارد زندگی معقولی حفظ کند <span class="verif v">✓ تأییدشده</span>. نکته‌ی مهم: <strong>سرمایه‌گذاری در <span class="en">TFSA</span> در ورشکستگی قابل‌توقیف است</strong>، اما بخش عمده‌ی <span class="en">RRSP</span> (به‌جز مشارکت‌های ۱۲ ماه آخر) معمولاً محافظت می‌شود <span class="verif i">≈ استنباط منطقی</span> (بسته به قوانین استانی).</p>
+
+      <h3>وصول طلب و توقیف حقوق (Collections &amp; Garnishment)</h3>
+      <ul class="clean">
+        <li><strong>توقیف حقوق:</strong> روشی برای وصول بدهی که در آن بخشی از حقوق مستقیماً برداشت می‌شود. اگرچه خودِ توقیف مستقیماً در گزارش اعتباری ظاهر نمی‌شود، اما پرداخت‌های ازدست‌رفته‌ی منتهی به آن، امتیاز را به‌شدت پایین می‌آورد <span class="verif v">✓ تأییدشده</span>.</li>
+        <li><strong>ماندگاری اطلاعات منفی:</strong> اطلاعات منفی و پرداخت‌های ازدست‌رفته تا <strong>۷ سال</strong> در گزارش اعتباری باقی می‌مانند <span class="verif v">✓ تأییدشده</span>.</li>
+      </ul>
+      <div class="box warn">
+        <div class="bt">⚠ قدرت ویژه‌ی CRA</div>
+        <p>برخلاف اغلب طلبکاران، <strong><span class="en">CRA</span> برای توقیف حقوق یا انجماد حساب بانکی به حکم دادگاه نیاز ندارد</strong> <span class="verif v">✓ تأییدشده</span>. CRA می‌تواند پس از صدور <span class="en">Notice of Assessment</span> و عدم پرداخت، مستقیماً اقدام به «<span class="en">Requirement to Pay</span>» کند. همچنین CRA به‌طور مستقیم اطلاعات مالیاتی را به دفاتر اعتباری گزارش نمی‌دهد، اما اگر به <span class="en">tax lien</span> یا آژانس وصول منجر شود، در گزارش اعتباری ظاهر می‌شود <span class="verif v">✓ تأییدشده</span>. به‌همین دلیل بدهی CRA همیشه نشانه‌ی ارجاع فوری است.</p>
+      </div>
+
+      <h3>رتبه و گزارش اعتباری (Credit Score &amp; Bureaus)</h3>
+      <p>در کانادا دو دفتر اصلی اعتبار وجود دارد: <span class="en">Equifax</span> و <span class="en">TransUnion</span> <span class="verif v">✓ تأییدشده</span>. رتبه‌ی اعتباری عددی بین <strong>۳۰۰ تا ۹۰۰</strong> است و هرچه بالاتر، بهتر.</p>
+      <div class="tablewrap"><table>
+        <caption>دامنه‌های رتبه‌ی اعتباری (نمونه — Equifax)</caption>
+        <thead><tr><th>رتبه‌بندی</th><th>دامنه‌ی Equifax</th></tr></thead>
+        <tbody>
+          <tr><td>ضعیف (Poor)</td><td>۳۰۰–۵۵۹</td></tr>
+          <tr><td>متوسط (Fair)</td><td>۵۶۰–۶۵۹</td></tr>
+          <tr><td>خوب (Good)</td><td>۶۶۰–۷۲۴</td></tr>
+          <tr><td>خیلی خوب (Very Good)</td><td>۷۲۵–۷۵۹</td></tr>
+          <tr><td>عالی (Excellent)</td><td>۷۶۰ به بالا</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box tip">
+        <div class="bt">✓ نکات کلیدی اعتبار برای مشاور</div>
+        <ul class="clean">
+          <li>گزارش از خود امتیاز مهم‌تر است؛ خطای گزارش، امتیاز را خراب می‌کند. اصلاح گزارش = بهبود امتیاز.</li>
+          <li>دو دفتر مستقل عمل می‌کنند؛ امتیاز ممکن است ۵۰ امتیاز یا بیشتر تفاوت داشته باشد. هر دو را بررسی کنید.</li>
+          <li>طبق قانون، <span class="en">Equifax</span> گزارش رایگان را به همه‌ی کانادایی‌ها ارائه می‌دهد؛ <span class="en">TransUnion</span> امتیاز رایگان را فقط به ساکنان کبک می‌دهد.</li>
+          <li>سابقه‌ی پرداخت بزرگ‌ترین جزء امتیاز است.</li>
+        </ul>
+      </div>
+
+      <h3>تجمیع بدهی و تسویه‌ی بدهی — تمایز مهم</h3>
+      <ul>
+        <li><strong>تجمیع بدهی (Consolidation):</strong> یک وام جدید که کل بدهی باید بازپرداخت شود؛ راهکار رسمی اعسار نیست.</li>
+        <li><strong>تسویه‌ی بدهی (Debt Settlement):</strong> شرکت‌های خصوصی که مدعی کاهش بدهی‌اند؛ <strong>اغلب هزینه‌ی پیش‌پرداخت می‌گیرند و پرریسک‌اند</strong>. برخلاف proposal، یک برنامه‌ی دولتی تأییدشده نیستند. به مشتری هشدار محتاطانه بدهید.</li>
+      </ul>
+
+      <div class="keytake">
+        <div class="bt">◆ نکات کلیدی این بخش</div>
+        <ul class="clean">
+          <li>فقط LIT می‌تواند proposal یا ورشکستگی ثبت کند — نه شما، نه ۴ پیلرز، نه وکیل.</li>
+          <li>پیشنهاد مصرف‌کننده دارایی‌ها را حفظ می‌کند و تأثیر اعتباری کمتری از ورشکستگی دارد.</li>
+          <li>CRA قدرت توقیف بدون حکم دادگاه دارد — بدهی مالیاتی = ارجاع فوری.</li>
+          <li>اطلاعات منفی تا ۷ سال در گزارش اعتباری می‌ماند؛ گزارش از امتیاز مهم‌تر است.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- ============ PART 4 ============ -->
+    <section class="part" id="p4">
+      <div class="part-head"><span class="pn">۰۴</span><h2 class="part-title">مقایسه‌ی 4 Pillars با سایر نهادها</h2></div>
+      <p class="lead-p">یکی از پرتکرارترین پرسش‌های مشتریان این است: «چرا ۴ پیلرز و نه بانک یا مستقیم سراغ یک trustee بروم؟» این بخش به شما کمک می‌کند تفاوت‌ها را دقیق توضیح دهید.</p>
+
+      <div class="tablewrap"><table>
+        <caption>4 Pillars در مقابل سایر ارائه‌دهندگان</caption>
+        <thead><tr><th>نهاد</th><th>نقش</th><th>برای چه‌کسی کار می‌کند؟</th><th>هزینه‌ی اولیه</th></tr></thead>
+        <tbody>
+          <tr><td><strong>4 Pillars</strong></td><td>مدافع و آموزش‌دهنده‌ی مستقل بدهکار</td><td>بدهکار</td><td>بدون هزینه‌ی پیش‌پرداخت</td></tr>
+          <tr><td>Licensed Insolvency Trustee (LIT)</td><td>تنها مجاز قانونی برای ثبت proposal/bankruptcy</td><td>تعهد قانونی به طلبکاران و فرایند</td><td>کارمزد تنظیم‌شده توسط دولت</td></tr>
+          <tr><td>آژانس مشاوره‌ی اعتباری</td><td>برنامه‌ی مدیریت بدهی (DMP)</td><td>اغلب با تأمین مالی از طلبکاران</td><td>متغیر</td></tr>
+          <tr><td>بانک</td><td>وام تجمیع / بازتأمین</td><td>منافع بانک (فروش محصول)</td><td>بهره و کارمزد</td></tr>
+          <tr><td>شرکت تسویه‌ی بدهی</td><td>مذاکره برای کاهش بدهی</td><td>منافع خود شرکت — پرریسک</td><td>اغلب هزینه‌ی پیش‌پرداخت</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="box info">
+        <div class="bt">💡 پیام محوری مقایسه (از زبان 4 Pillars)</div>
+        <p>طبق وب‌سایت رسمی: «هر شرکت یا متخصصی (از جمله مشاوره‌ی اعتباری رایگان) از انتخاب شدن توسط شما منفعت مالی می‌برد. ۴ پیلرز یک دیدگاه مستقل ارائه می‌دهد» <span class="verif v">✓ تأییدشده</span>. این تمایز اصلی است: استقلال از طلبکار.</p>
+      </div>
+
+      <h3>تفاوت کلیدی با LIT</h3>
+      <p>این نکته را همیشه شفاف کنید: <strong>۴ پیلرز جایگزین LIT نیست، بلکه مکمل آن است.</strong> اگر راه‌حل نهایی یک پیشنهاد مصرف‌کننده یا ورشکستگی باشد، آن را یک LIT ثبت می‌کند. ۴ پیلرز به مشتری کمک می‌کند که آگاهانه تصمیم بگیرد و سپس او را در مسیر بازسازی اعتبار همراهی می‌کند — جایی که LIT معمولاً این خدمت بلندمدت را ارائه نمی‌دهد.</p>
+
+      <div class="keytake">
+        <div class="bt">◆ نکات کلیدی بخش ۴</div>
+        <ul class="clean">
+          <li>تمایز ۴ پیلرز «استقلال از طلبکار» است.</li>
+          <li>ثبت رسمی فقط با LIT انجام می‌شود؛ ۴ پیلرز مکمل است نه جایگزین.</li>
+          <li>درباره‌ی شرکت‌های تسویه‌ی بدهی با هزینه‌ی پیش‌پرداخت به مشتری هشدار محتاطانه بدهید.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PART 5 ============ -->
+    <section class="part" id="p5">
+      <div class="part-head"><span class="pn">۰۵</span><h2 class="part-title">مسیر کامل مشتری (Client Journey)</h2></div>
+      <p class="lead-p">این جریان کار، از اولین تماس تا بازیابی بلندمدت مالی را نشان می‌دهد. نقش شما به‌عنوان مشاور WFG در مراحل ۱ تا ۴ و سپس در مرحله‌ی بازگشت (مرحله‌ی ۱۰–۱۱) پررنگ است.</p>
+
+      <div class="tree">
+        <div class="node"><span class="q">۱ · تماس اولیه</span><div class="branch">مشتری در جلسه‌ی WFG نشانه‌ی فشار بدهی بروز می‌دهد یا مستقیم مطرح می‌کند.</div></div>
+        <div class="node"><span class="q">۲ · گردآوری اطلاعات</span><div class="branch">مشاور WFG در قالب needs analysis، تصویر کلی بدهی را ثبت می‌کند.</div></div>
+        <div class="node"><span class="q">۳ · ارزیابی مالی</span><div class="branch">تشخیص اینکه آیا بدهی مانع برنامه‌ریزی مالی (بیمه، پس‌انداز) شده است.</div></div>
+        <div class="node"><span class="q">۴ · شناسایی مشکل بدهی و کسب رضایت</span><div class="branch"><b>نقطه‌ی ارجاع:</b> مشاور با رضایت صریح مشتری، ارجاع را ثبت می‌کند.</div></div>
+        <div class="node"><span class="q">۵ · فاز آموزش (جلسه‌ی اطلاع‌رسانی 4 Pillars)</span><div class="branch">۴ پیلرز همه‌ی گزینه‌ها را آموزش می‌دهد (رایگان).</div></div>
+        <div class="node"><span class="q">۶ · ارزیابی گزینه‌های موجود</span><div class="branch">انتخاب میان consolidation / proposal / bankruptcy / refinancing.</div></div>
+        <div class="node"><span class="q">۷ · ارجاع به LIT (در صورت لزوم)</span><div class="branch">اگر راه‌حل رسمی باشد، یک LIT آن را اجرا می‌کند.</div></div>
+        <div class="node"><span class="q">۸ · پیاده‌سازی راهکار</span><div class="branch">اغلب ظرف چند هفته؛ پس از ورود LIT، حل بدهی می‌تواند در ~۴۵ روز کامل شود.</div></div>
+        <div class="node"><span class="q">۹ · پیگیری</span><div class="branch">۴ پیلرز گزارش ارجاع و کارمزد را به مشاور WFG ارائه می‌دهد.</div></div>
+        <div class="node"><span class="q">۱۰ · بازسازی اعتبار</span><div class="branch">خدمت Financial Advocacy & Wellness برای ترمیم رتبه‌ی اعتباری.</div></div>
+        <div class="node"><span class="q">۱۱ · بازیابی بلندمدت — بازگشت به WFG</span><div class="branch"><b>چرخه کامل می‌شود:</b> مشتری تثبیت‌شده برای RRSP، RESP، بیمه و سرمایه‌گذاری بازمی‌گردد.</div></div>
+      </div>
+
+      <div class="box tip">
+        <div class="bt">✓ چرا این مدل برای شما سودمند است</div>
+        <p>ارجاع به ۴ پیلرز «واگذاری رابطه نیست — بلکه باز کردن آن است.» با حل بدهی، جریان نقدی آزاد می‌شود و مشتری در موقعیت بسیار قوی‌تری برای خرید بیمه و پس‌انداز قرار می‌گیرد و به شما بازمی‌گردد <span class="verif i">≈ استنباط منطقی</span> (بر پایه‌ی پیام‌های عمومی شراکت).</p>
+      </div>
+    </section>
+
+    <!-- ============ PART 6 ============ -->
+    <section class="part" id="p6">
+      <div class="part-head"><span class="pn">۰۶</span><h2 class="part-title">دسته‌بندی انواع بدهی</h2></div>
+      <p class="lead-p">هر نوع بدهی ملاحظات درمانی متفاوتی دارد. شناخت این تفاوت‌ها به شما کمک می‌کند نشانه‌ها را بهتر تشخیص دهید.</p>
+
+      <div class="tablewrap"><table>
+        <caption>ملاحظات انواع بدهی</caption>
+        <thead><tr><th>نوع بدهی</th><th>تضمین‌شده/بدون‌تضمین</th><th>ملاحظه‌ی کلیدی</th></tr></thead>
+        <tbody>
+          <tr><td>کارت اعتباری</td><td>بدون تضمین</td><td>بهره‌ی بالا (~۱۹٪+)؛ شایع‌ترین محرک بحران</td></tr>
+          <tr><td>وام شخصی</td><td>اغلب بدون تضمین</td><td>قابل گنجاندن در proposal</td></tr>
+          <tr><td>خط اعتباری (LOC)</td><td>متغیر</td><td>اگر تضمین‌شده باشد (HELOC)، حساس به دارایی</td></tr>
+          <tr><td>وام روز پرداخت (<span class="en">Payday</span>)</td><td>بدون تضمین</td><td>چرخه‌ی بسیار خطرناک؛ نشانه‌ی فشار حاد</td></tr>
+          <tr><td>بدهی CRA (مالیات)</td><td>خاص</td><td>اختیارات ویژه‌ی CRA؛ نیازمند بررسی دقیق</td></tr>
+          <tr><td>وام دانشجویی</td><td>خاص</td><td>قاعده‌ی ۷ سال برای گنجاندن در ورشکستگی</td></tr>
+          <tr><td>وام خودرو</td><td>تضمین‌شده</td><td>خودرو وثیقه است</td></tr>
+          <tr><td>وام مسکن (<span class="en">Mortgage</span>)</td><td>تضمین‌شده</td><td>خانه وثیقه؛ خارج از حوزه‌ی proposal معمول</td></tr>
+          <tr><td>بدهی مشترک / ضامن‌دار</td><td>متغیر</td><td>مسئولیت همسر یا ضامن باید بررسی شود</td></tr>
+          <tr><td>بدهی کسب‌وکار</td><td>متغیر</td><td>ممکن است نیازمند راهکارهای تخصصی باشد</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="box info">
+        <div class="bt">💡 موضوعاتی که 4 Pillars در جلسه پوشش می‌دهد</div>
+        <p>طبق وب‌سایت رسمی، جلسه‌ی اطلاع‌رسانی شامل «مسئولیت همسر، نحوه‌ی برخورد با وام‌های ضامن‌دار یا وام‌های دانشجویی، و بهترین روش برخورد با طلبکاران» است <span class="verif v">✓ تأییدشده</span>.</p>
+      </div>
+
+      <div class="box warn">
+        <div class="bt">⚠ موقعیت‌هایی خارج از حوزه‌ی معمول</div>
+        <p>بدهی‌های پیچیده‌ی کسب‌وکار، بدهی‌های مالیاتی بزرگ CRA، و وضعیت‌های حقوقی خاص ممکن است نیازمند متخصص اضافی باشند. در این موارد، فقط شناسایی کنید و ارجاع دهید؛ خودتان تحلیل تخصصی نکنید.</p>
+      </div>
+    </section>
+    <!-- ============ PART 7 ============ -->
+    <section class="part" id="p7">
+      <div class="part-head"><span class="pn">۰۷</span><h2 class="part-title">چارچوب ارجاع برای مشاوران WFG</h2></div>
+      <p class="lead-p">این بخش یک چارچوب تصمیم عملی است: چه زمانی ارجاع مناسب است، چه زمانی نه، و چه نشانه‌هایی به ارجاع فوری اشاره دارند.</p>
+
+      <h3>درخت تصمیم ارجاع</h3>
+      <div class="tree">
+        <div class="node"><span class="q">آیا مشتری بدهی مصرفی غیرقابل‌مدیریت دارد؟</span>
+          <div class="branch"><b>خیر →</b> ادامه‌ی برنامه‌ریزی مالی عادی. ارجاع لازم نیست.</div>
+          <div class="branch"><b>بله →</b> به پرسش بعدی بروید.</div>
+        </div>
+        <div class="node"><span class="q">آیا بدهی مانع اهداف مالی (بیمه، پس‌انداز، RESP/RRSP) شده است؟</span>
+          <div class="branch"><b>خیر →</b> پایش کنید؛ آموزش سبک بدهید.</div>
+          <div class="branch"><b>بله →</b> ارجاع آموزشی به ۴ پیلرز مناسب است.</div>
+        </div>
+        <div class="node"><span class="q">آیا نشانه‌های بحران حاد وجود دارد؟ (وام payday، تماس وصول طلب، توقیف حقوق)</span>
+          <div class="branch"><b>بله →</b> <b>ارجاع فوری.</b> این موقعیت‌ها نیازمند اقدام سریع‌اند.</div>
+        </div>
+        <div class="node"><span class="q">آیا رضایت صریح مشتری برای اشتراک اطلاعات گرفته شده است؟</span>
+          <div class="branch"><b>خیر →</b> <b>توقف.</b> پیش از ثبت ارجاع، رضایت بگیرید.</div>
+          <div class="branch"><b>بله →</b> ارجاع را ثبت و مستندسازی کنید.</div>
+        </div>
+      </div>
+
+      <h3>نشانه‌های هشدار (Red Flags) برای ارجاع</h3>
+      <ul class="clean">
+        <li>پرداخت فقط حداقلِ کارت اعتباری، ماه‌به‌ماه.</li>
+        <li>استفاده از یک کارت برای پرداخت کارت دیگر.</li>
+        <li>تماس‌های آژانس وصول طلب (<span class="en">collections</span>).</li>
+        <li>چرخه‌ی وام‌های <span class="en">payday</span>.</li>
+        <li>عدم توان مشارکت در پس‌انداز یا خرید بیمه به‌دلیل پرداخت بدهی.</li>
+        <li>استرس مالی آشکار، اضطراب یا شرم هنگام صحبت از پول.</li>
+        <li>تهدید به توقیف حقوق (<span class="en">wage garnishment</span>) یا اقدام قانونی.</li>
+      </ul>
+
+      <div class="box tip">
+        <div class="bt">✓ چه زمانی ارجاع لازم نیست</div>
+        <p>اگر مشتری بدهی قابل‌مدیریت دارد، منظم پرداخت می‌کند، و بدهی مانع اهداف مالی‌اش نشده — ارجاع لازم نیست. ارجاع بی‌مورد می‌تواند اعتماد را خدشه‌دار کند. قضاوت متعادل داشته باشید.</p>
+      </div>
+    </section>
+
+    <!-- ============ PART 8 ============ -->
+    <section class="part" id="p8">
+      <div class="part-head"><span class="pn">۰۸</span><h2 class="part-title">نقش مشاور مالی WFG</h2></div>
+      <p class="lead-p">مرز میان «آموزش‌دادن»، «شناسایی نیاز» و «ارائه‌ی مشاوره‌ی تنظیم‌شده» (regulated advice) حیاتی است. عبور از این مرز می‌تواند ریسک انطباق و حقوقی ایجاد کند.</p>
+
+      <div class="tablewrap"><table>
+        <thead><tr><th>مجاز است ✓</th><th>مجاز نیست ✕</th></tr></thead>
+        <tbody>
+          <tr><td>شناسایی نشانه‌های فشار بدهی در گفت‌وگو</td><td>توصیه به ثبت ورشکستگی یا proposal خاص</td></tr>
+          <tr><td>توضیح کلی اینکه «گزینه‌های متعددی وجود دارد»</td><td>ارائه‌ی مشاوره‌ی حقوقی یا ورشکستگی</td></tr>
+          <tr><td>معرفی ۴ پیلرز به‌عنوان شریک معتبر WFG</td><td>تضمین نتیجه‌ی خاص (مثلاً «بدهی شما ۷۰٪ کم می‌شود»)</td></tr>
+          <tr><td>گرفتن رضایت و ثبت ارجاع</td><td>اشتراک اطلاعات بدون رضایت</td></tr>
+          <tr><td>همراهی در برنامه‌ریزی مالی پس از حل بدهی</td><td>توصیه به محصول وام تجمیع بدون مجوز مربوطه</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>تمایز سه‌گانه: آموزش / شناسایی / مشاوره</h3>
+      <ul>
+        <li><strong>آموزش (Education):</strong> «بسیاری از کانادایی‌ها با بدهی دست‌وپنجه نرم می‌کنند و راه‌حل‌های متعددی وجود دارد.» — همیشه مجاز.</li>
+        <li><strong>شناسایی نیاز (Identifying):</strong> «به‌نظر می‌رسد بدهی فعلی مانع برنامه‌ریزی بیمه و پس‌انداز شماست.» — مجاز.</li>
+        <li><strong>مشاوره‌ی تنظیم‌شده (Regulated Advice):</strong> «شما باید پیشنهاد مصرف‌کننده ثبت کنید.» — <strong>غیرمجاز</strong>؛ فقط LIT.</li>
+      </ul>
+
+      <div class="box warn">
+        <div class="bt">⛔ مرز کلیدی</div>
+        <p>هرگاه احساس کردید در حال «تجویز» یک راه‌حل خاص هستید، توقف کنید. نقش شما <strong>باز کردن در</strong> است، نه انتخاب اتاق. متخصص (۴ پیلرز و LIT) راه‌حل را تعیین می‌کند.</p>
+      </div>
+    </section>
+
+    <!-- ============ PART 9 ============ -->
+    <section class="part" id="p9">
+      <div class="part-head"><span class="pn">۰۹</span><h2 class="part-title">انطباق و مدیریت ریسک</h2></div>
+      <p class="lead-p">این بخش، خطاهای رایج، عبارات گمراه‌کننده، و الزامات مستندسازی را پوشش می‌دهد. رعایت این موارد از شما، مشتری و WFG محافظت می‌کند.</p>
+
+      <h3>الزام رضایت مشتری (تأییدشده)</h3>
+      <div class="box info">
+        <div class="bt">💡 از فرم ارجاع رسمی WFG–4 Pillars</div>
+        <p>فرم ارجاع شامل این اعلامیه‌ی الزامی است: با ثبت ارجاع، شما تأیید می‌کنید که «رضایت لازم مشتری برای اشتراک‌گذاری اطلاعات تماس با ۴ پیلرز را گرفته‌اید» <span class="verif v">✓ تأییدشده</span>. نقض این، تخطی از <span class="en">PIPEDA</span> و قوانین حریم خصوصی استانی است.</p>
+      </div>
+
+      <h3>زمینه‌ی مقرراتی FSRA (تأییدشده)</h3>
+      <p>در سال ۲۰۲۴، نهاد ناظر انتاریو (<span class="en">FSRA</span>) با <span class="en">WFGIA Canada</span> به توافق انطباق رسید که شامل این موارد بود <span class="verif v">✓ تأییدشده</span>:</p>
+      <ul>
+        <li>تشکیل تیم نظارت مستقل برای ارزیابی انطباق مشاوران.</li>
+        <li>الزام به انجام <span class="en">needs analysis</span> و نوشتن «نامه‌های دلیل» (<span class="en">reasons-why letters</span>).</li>
+        <li>گزارش‌دهی منظم انطباق به FSRA.</li>
+      </ul>
+      <p>اگرچه این الزامات مستقیماً به فروش بیمه مربوط است، فرهنگ انطباقی را تعیین می‌کند که ارجاع به ۴ پیلرز نیز باید در آن انجام شود. <strong>دلیل هر ارجاع را در پرونده‌ی مشتری مستند کنید.</strong></p>
+
+      <h3>خطاهای رایج مشاور — با مثال زبانی</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>❌ عبارت غیرمنطبق</th><th>✓ عبارت منطبق</th></tr></thead>
+        <tbody>
+          <tr><td>«۴ پیلرز بدهی شما را ۷۰٪ کم می‌کند.»</td><td>«۴ پیلرز شرایط شما را بررسی می‌کند و گزینه‌ها را توضیح می‌دهد.»</td></tr>
+          <tr><td>«شما باید ورشکستگی اعلام کنید.»</td><td>«یک متخصص مستقل می‌تواند به شما کمک کند بهترین گزینه را بیابید.»</td></tr>
+          <tr><td>«این تنها راه‌حل شماست.»</td><td>«راه‌حل‌های متعددی هست؛ بیایید با یک مشاوره‌ی رایگان شروع کنیم.»</td></tr>
+          <tr><td>«نگران اعتبارتان نباشید، آسیبی نمی‌بیند.»</td><td>«تأثیر بر اعتبار بسته به گزینه متفاوت است؛ متخصص توضیح می‌دهد.»</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>بهترین شیوه‌های مستندسازی و ارجاع</h3>
+      <ul class="clean">
+        <li>رضایت شفاهی یا کتبی مشتری را پیش از ارجاع بگیرید و در پرونده ثبت کنید.</li>
+        <li>به مشتری بگویید ۴ پیلرز کیست و چه می‌کند (شریک شخص ثالث، نه خود WFG).</li>
+        <li>وضعیت بدهی را به‌عنوان بخشی از needs analysis مستند کنید.</li>
+        <li>هرگز مشاوره‌ی ورشکستگی اختصاصی ندهید.</li>
+        <li>اگر مشتری بپرسد، رابطه‌ی ارجاعی و کارمزد احتمالی را افشا کنید.</li>
+      </ul>
+
+      <div class="box warn">
+        <div class="bt">⚠ تعهداتی که هرگز نباید داد</div>
+        <ul class="clean">
+          <li>تضمین درصد کاهش بدهی.</li>
+          <li>تضمین حفظ یا بهبود رتبه‌ی اعتباری.</li>
+          <li>تضمین زمان دقیق حل پرونده.</li>
+          <li>ادعای اینکه ورشکستگی یا proposal «هیچ پیامدی ندارد».</li>
+        </ul>
+      </div>
+    </section>
+    <!-- ============ PART 10 ============ -->
+    <section class="part" id="p10">
+      <div class="part-head"><span class="pn">۱۰</span><h2 class="part-title">گفت‌وگو با مشتری — اسکریپت‌های حرفه‌ای (دوزبانه)</h2></div>
+      <p class="lead-p">این اسکریپت‌ها طبیعی و مشورتی‌اند، نه فروشنده‌وار. هر سناریو هم به فارسی و هم به انگلیسی ارائه شده است تا در گفت‌وگو با مشتریان دوزبانه به‌کار آید.</p>
+
+      <h3>سناریو الف: کشف مشکل بدهی در جریان needs analysis</h3>
+      <div class="script">
+        <div class="turn"><span class="who">مشاور:</span> «همان‌طور که برنامه‌ی مالی‌تان را می‌سازیم، دوست دارم تصویر کاملی داشته باشم. آیا تعهدات ماهانه‌ای — وام، کارت اعتباری، خط اعتباری — دارید که در حال مدیریتشان هستید؟»</div>
+        <div class="turn"><span class="who client">مشتری:</span> «بله، بدهی کارت اعتباری زیادی داریم. راستش خیلی استرس‌زاست.»</div>
+        <div class="turn"><span class="who">مشاور:</span> «ممنون که این را در میان گذاشتید. این دقیقاً موضوعی است که من مرتب به مشتریانم در آن کمک می‌کنم. می‌توانم بپرسم تقریباً چه مبلغی است و پرداخت ماهانه را چطور می‌بینید؟»</div>
+        <div class="turn"><span class="who client">مشتری:</span> «حدود ۵۰ هزار دلار، و به‌سختی از پسش برمی‌آییم.»</div>
+        <div class="turn"><span class="who">مشاور:</span> «به‌نظر واقعاً دشوار می‌رسد. من با شرکتی به‌نام ۴ پیلرز همکاری نزدیک دارم — شریک معتبر WFG که در همین موقعیت‌ها تخصص دارد. مشاوره‌ی اولیه‌شان رایگان است و من در برنامه‌ریزی کلی مالی شما همراه می‌مانم. اجازه می‌دهید شما را به آن‌ها معرفی کنم؟»</div>
+        <div class="turn"><span class="who client">مشتری:</span> «بله، واقعاً کمک می‌کند.»</div>
+        <div class="turn"><span class="who">مشاور:</span> «عالی. برای این کار به اجازه‌ی شما برای اشتراک اطلاعات تماس‌تان نیاز دارم. موافقید؟»</div>
+        <div class="stage">[رضایت شفاهی را ثبت کنید و سپس ارجاع را وارد کنید.]</div>
+      </div>
+      <div class="script" dir="ltr" style="text-align:left">
+        <div class="turn"><span class="who">Advisor:</span> “As we build your financial plan, I like to get the full picture. Are there any monthly obligations — loans, credit cards, lines of credit — you’re managing right now?”</div>
+        <div class="turn"><span class="who client">Client:</span> “Yeah, we have a fair bit of credit card debt. It’s been stressing us out.”</div>
+        <div class="turn"><span class="who">Advisor:</span> “Thank you for sharing that. That’s exactly what I help clients navigate. May I ask roughly how much, and how the monthly payments feel?”</div>
+        <div class="turn"><span class="who client">Client:</span> “About $50,000, and we’re barely keeping up.”</div>
+        <div class="turn"><span class="who">Advisor:</span> “That sounds really difficult. I work closely with a firm called 4 Pillars — a trusted WFG partner who specializes in exactly this. The first consultation is free, and I stay involved in your overall planning. Would it be okay if I connected you?”</div>
+        <div class="turn"><span class="who client">Client:</span> “Yes, that would really help.”</div>
+        <div class="turn"><span class="who">Advisor:</span> “Great. I’ll need your permission to share your contact information with them. Is that okay?”</div>
+        <div class="stage">[Document verbal consent, then submit the referral.]</div>
+      </div>
+
+      <h3>سناریو ب: مشتری مقاومت می‌کند — احساس خجالت</h3>
+      <div class="script">
+        <div class="turn"><span class="who client">مشتری:</span> «راستش نمی‌خواهم درباره‌ی بدهی صحبت کنم... خجالت‌آور است.»</div>
+        <div class="turn"><span class="who">مشاور:</span> «کاملاً درک می‌کنم و هیچ قضاوتی در کار نیست. تعجب می‌کنید اگر بدانید چند خانواده دقیقاً با همین موضوع روبه‌رو هستند. خبر خوب این است که راه‌حل‌های واقعی وجود دارد — و هرچه زودتر اقدام کنیم، سریع‌تر برنامه‌ی مالی شما واقعاً کار می‌کند. همکار معتبری دارم که این کار را با احترام و محرمانه انجام می‌دهد. مایلید فقط کمی بیشتر درباره‌ی کارشان بشنوید؟»</div>
+      </div>
+      <div class="script" dir="ltr" style="text-align:left">
+        <div class="turn"><span class="who client">Client:</span> “I don’t really want to talk about the debt… it’s embarrassing.”</div>
+        <div class="turn"><span class="who">Advisor:</span> “I completely understand, and there’s no judgment here. You’d be surprised how many families face exactly this. The good news is there are real solutions — and the sooner we act, the sooner your plan truly works for you. I have a trusted colleague who handles this respectfully and confidentially. Would you be open to just hearing a bit about what they do?”</div>
+      </div>
+
+      <h3>سناریو ج: معرفی پیشگیرانه در جلسه‌ی اول</h3>
+      <div class="script">
+        <div class="turn"><span class="who">مشاور:</span> «یک نکته که همیشه به مشتریان جدید می‌گویم — WFG شریک معتبری به‌نام ۴ پیلرز دارد که پیش از تمرکز بر بیمه و سرمایه‌گذاری، در حل بدهی تخصص دارد. اگر بدهی هرگز عاملی در زندگی مالی شما باشد، من ارتباط مستقیمی آنجا دارم. خوب است بدانید وجود دارد. حالا بیایید با تصویر کلی شما شروع کنیم...»</div>
+      </div>
+
+      <h3>سناریو د: پیگیری پس از ارجاع</h3>
+      <div class="script">
+        <div class="turn"><span class="who">مشاور:</span> «سلام [نام]، فقط خواستم احوال‌پرسی کنم. توانستید با ۴ پیلرز صحبت کنید؟ می‌خواهم مطمئن شوم احساس می‌کنید پشتیبانی می‌شوید. هر زمان آماده بودید، می‌توانیم برنامه‌ی مالی بلندمدت شما را از همان جایی که رها کردیم ادامه دهیم.»</div>
+      </div>
+
+      <div class="box tip">
+        <div class="bt">✓ اصول لحن گفت‌وگو</div>
+        <ul class="clean">
+          <li>همدلی پیش از راه‌حل؛ هرگز قضاوت نکنید.</li>
+          <li>۴ پیلرز را به‌عنوان «شریک معتبر»، نه «تنها راه»، معرفی کنید.</li>
+          <li>همیشه رضایت را به‌صراحت بخواهید.</li>
+          <li>تأکید کنید که شما همراه می‌مانید — رابطه قطع نمی‌شود.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- ============ PART 11 ============ -->
+    <section class="part" id="p11">
+      <div class="part-head"><span class="pn">۱۱</span><h2 class="part-title">چک‌لیست‌های مشاور</h2></div>
+      <p class="lead-p">سه چک‌لیست عملی برای پیش، حین و پس از ارجاع. این‌ها را می‌توانید چاپ کنید و در پرونده‌ی مشتری نگه دارید.</p>
+
+      <h3>پیش از ارجاع</h3>
+      <ul class="checklist">
+        <li>تصویر کامل بدهی مشتری را در needs analysis ثبت کرده‌ام.</li>
+        <li>نشانه‌های هشدار (Red Flags) را بررسی کرده‌ام.</li>
+        <li>مطمئن شده‌ام که بدهی واقعاً مانع اهداف مالی است (ارجاع بی‌مورد نباشد).</li>
+        <li>به مشتری توضیح داده‌ام که ۴ پیلرز شخص ثالث است، نه خود WFG.</li>
+        <li>رضایت صریح مشتری برای اشتراک اطلاعات را گرفته‌ام.</li>
+        <li>از دادن هرگونه مشاوره‌ی ورشکستگی یا تضمین نتیجه پرهیز کرده‌ام.</li>
+      </ul>
+
+      <h3>حین ارجاع</h3>
+      <ul class="checklist">
+        <li>همه‌ی فیلدهای الزامی فرم ارجاع را تکمیل کرده‌ام (نام، تلفن، کد پستی، ایمیل، کد همکار).</li>
+        <li>اعلامیه‌ی رضایت را که در فرم می‌پذیرم، خوانده و درک کرده‌ام.</li>
+        <li>انتظارات مشتری را تنظیم کرده‌ام (مشاوره‌ی رایگان، تماس از دفتر محلی).</li>
+        <li>یادآوری انطباق: هیچ تعهد یا تضمینی نداده‌ام.</li>
+      </ul>
+
+      <h3>پس از ارجاع</h3>
+      <ul class="checklist">
+        <li>ارجاع و رضایت را در پرونده‌ی مشتری مستند کرده‌ام.</li>
+        <li>یک پیگیری محترمانه برای اطمینان از پشتیبانی مشتری برنامه‌ریزی کرده‌ام.</li>
+        <li>برنامه‌ی بازگشت مشتری برای برنامه‌ریزی بلندمدت را در ذهن دارم.</li>
+        <li>وضعیت اعتبارات CE خود را به‌روز نگه داشته‌ام.</li>
+      </ul>
+    </section>
+    <!-- ============ PART 12 ============ -->
+    <section class="part" id="p12">
+      <div class="part-head"><span class="pn">۱۲</span><h2 class="part-title">پرسش‌های متداول (۱۰۰+ پرسش)</h2></div>
+      <p class="lead-p">دسته‌بندی پرسش‌ها مطابق دسته‌بندی رسمی وب‌سایت ۴ پیلرز است. این بخش برای استفاده‌ی سریع در جلسات طراحی شده — روی هر پرسش بزنید تا پاسخ باز شود.</p>
+
+      <div class="faq-cat">درباره‌ی 4 Pillars</div>
+      <details class="faq"><summary>۴ پیلرز دقیقاً چیست؟</summary><div class="ans">یک شرکت کانادایی «مدافع بدهکار» که از طریق آموزش و تجربه، بهترین مسیر خروج از بدهی را بر اساس شرایط فرد نشان می‌دهد. خودش طلبکار، وام‌دهنده یا LIT نیست.</div></details>
+      <details class="faq"><summary>آیا ۴ پیلرز هزینه‌ی پیش‌پرداخت می‌گیرد؟</summary><div class="ans">خیر. طبق وب‌سایت رسمی، ۴ پیلرز هزینه‌ی مشاوره‌ی بدهی یا پیش‌پرداخت دریافت نمی‌کند. خدمت بازسازی اعتبار جداگانه و هزینه‌بر است.</div></details>
+      <details class="faq"><summary>چند دفتر دارند؟</summary><div class="ans">۵۱ دفتر در سراسر کانادا.</div></details>
+      <details class="faq"><summary>چطور می‌توانم به اعتبار آن‌ها مطمئن شوم؟</summary><div class="ans">۳٬۰۰۰+ نظر مستقل با امتیاز ۴٫۹/۵ در Trustpilot و سابقه‌ی کمک به ۵۰٬۰۰۰+ خانواده در سال.</div></details>
+      <details class="faq"><summary>آیا جلسه‌ی اطلاع‌رسانی حضوری است؟</summary><div class="ans">می‌تواند در دفتر محلی یا به‌صورت مجازی برگزار شود.</div></details>
+      <details class="faq"><summary>بنیان‌گذار ۴ پیلرز کیست؟</summary><div class="ans">پاول مورفی (<span class="en">Paul Murphy</span>)، نویسنده‌ی کتاب <span class="en">Beating the Debt Game</span>.</div></details>
+      <details class="faq"><summary>چرا ۴ پیلرز خود را «مدافع» می‌نامد؟</summary><div class="ans">چون برخلاف بانک‌ها و آژانس‌ها، برای بدهکار وکالت می‌کند نه طلبکار، و از انتخاب یک گزینه‌ی خاص منفعت مستقیم نمی‌برد.</div></details>
+      <details class="faq"><summary>تفاوت اول مشاوره‌ی رایگان و خدمت هزینه‌بر چیست؟</summary><div class="ans">جلسه‌ی اطلاع‌رسانی و مشاوره‌ی بدهی رایگان است؛ خدمت بازسازی اعتبار (Financial Advocacy &amp; Wellness) هزینه‌بر است.</div></details>
+
+      <div class="faq-cat">باورهای رایج (Common Myths)</div>
+      <details class="faq"><summary>آیا کمک‌گرفتن برای بدهی یعنی شکست خوردم؟</summary><div class="ans">خیر. بسیاری از کانادایی‌ها بدهی دارند؛ اقدام زودهنگام نشانه‌ی مسئولیت‌پذیری است، نه شکست.</div></details>
+      <details class="faq"><summary>آیا بدهی همیشه به ورشکستگی ختم می‌شود؟</summary><div class="ans">خیر. ورشکستگی فقط یکی از چند گزینه است؛ تجمیع، بازتأمین، یا پیشنهاد مصرف‌کننده اغلب مناسب‌ترند.</div></details>
+      <details class="faq"><summary>آیا اعتبارم برای همیشه نابود می‌شود؟</summary><div class="ans">خیر. با برنامه‌ی درست، آسیب به حداقل می‌رسد و اعتبار قابل بازسازی است.</div></details>
+      <details class="faq"><summary>آیا فقط افراد بی‌مسئولیت دچار بدهی می‌شوند؟</summary><div class="ans">خیر. اغلب بحران‌ها ناشی از رویدادهای زندگی است: بیکاری، بیماری، طلاق. صنعت بدهی به‌نفع طلبکاران طراحی شده است.</div></details>
+      <details class="faq"><summary>آیا اگر منتظر بمانم مشکل خودبه‌خود حل می‌شود؟</summary><div class="ans">معمولاً نه؛ بهره انباشته می‌شود و تأخیر اغلب وضعیت را بدتر می‌کند. اقدام زودهنگام گزینه‌های بیشتری باقی می‌گذارد.</div></details>
+      <details class="faq"><summary>آیا مشاوره‌ی اعتباری «رایگان» واقعاً بی‌طرف است؟</summary><div class="ans">طبق ۴ پیلرز، هر نهاد (حتی مشاوره‌ی رایگان) از انتخاب‌شدن منفعت می‌برد؛ بنابراین یک دیدگاه مستقل ارزشمند است.</div></details>
+
+      <div class="faq-cat">پیشنهاد مصرف‌کننده (Consumer Proposal)</div>
+      <details class="faq"><summary>پیشنهاد مصرف‌کننده چیست؟</summary><div class="ans">توافق رسمی تحت BIA که از طریق LIT بخشی از بدهی را طی حداکثر ۵ سال بازپرداخت می‌کنید و مابقی بخشوده می‌شود.</div></details>
+      <details class="faq"><summary>چه کسی آن را ثبت می‌کند؟</summary><div class="ans">فقط یک Licensed Insolvency Trustee. ۴ پیلرز شما را آموزش می‌دهد و هماهنگ می‌کند.</div></details>
+      <details class="faq"><summary>چه مدت در گزارش اعتباری می‌ماند؟</summary><div class="ans">معمولاً تا ۳ سال پس از تکمیل پرداخت‌ها (رتبه‌ی R7).</div></details>
+      <details class="faq"><summary>آیا طلبکاران می‌توانند رد کنند؟</summary><div class="ans">بله، اما اگر اکثریت بپذیرند، برای همه الزام‌آور می‌شود.</div></details>
+      <details class="faq"><summary>تفاوتش با ورشکستگی چیست؟</summary><div class="ans">معمولاً دارایی‌ها حفظ می‌شوند و تأثیر اعتباری کمتر از ورشکستگی است.</div></details>
+      <details class="faq"><summary>چه مقدار بدهی برای proposal مناسب است؟</summary><div class="ans">معمولاً بدهی بدون‌تضمین بین ۱۰هزار تا ۲۵۰هزار دلار (سقف قانونی برای فرد).</div></details>
+      <details class="faq"><summary>آیا می‌توانم زودتر از موعد proposal را تمام کنم؟</summary><div class="ans">بله، پرداخت زودتر از موعد معمولاً مجاز است و می‌تواند بازسازی اعتبار را تسریع کند.</div></details>
+      <details class="faq"><summary>اگر یک پرداخت را از دست بدهم چه؟</summary><div class="ans">از دست دادن چند پرداخت می‌تواند proposal را باطل کند؛ ارتباط با LIT در صورت مشکل مالی ضروری است.</div></details>
+      <details class="faq"><summary>آیا بهره روی بدهی در طول proposal ادامه دارد؟</summary><div class="ans">خیر؛ یکی از مزایا توقف انباشت بهره است.</div></details>
+
+      <div class="faq-cat">اعتبار و بدهی (Credit &amp; Debt)</div>
+      <details class="faq"><summary>رتبه‌ی اعتباری چگونه محاسبه می‌شود؟</summary><div class="ans">عوامل اصلی: سابقه‌ی پرداخت، میزان استفاده از اعتبار، طول سابقه، نوع اعتبار و درخواست‌های جدید.</div></details>
+      <details class="faq"><summary>چرا اعتبار اینقدر مهم است؟</summary><div class="ans">طبق ۴ پیلرز، سابقه‌ی اعتباری «قدرت زیادی بر زندگی، معیشت و رفاه فرد دارد».</div></details>
+      <details class="faq"><summary>آیا بررسی اعتبار خودم به امتیازم آسیب می‌زند؟</summary><div class="ans">خیر، بررسی خودتان (soft inquiry) آسیبی ندارد.</div></details>
+      <details class="faq"><summary>تأثیر پرداخت حداقلی کارت چیست؟</summary><div class="ans">بدهی را تقریباً ثابت نگه می‌دارد و بهره انباشته می‌شود؛ نشانه‌ی نیاز به اقدام.</div></details>
+      <details class="faq"><summary>نسبت استفاده‌ی اعتباری (utilization) چیست؟</summary><div class="ans">نسبت مانده‌ی بدهی به سقف اعتبار؛ نگه‌داشتن آن زیر ۳۰٪ برای امتیاز بهتر است.</div></details>
+      <details class="faq"><summary>دامنه‌ی رتبه‌ی اعتباری در کانادا چقدر است؟</summary><div class="ans">معمولاً بین ۳۰۰ تا ۹۰۰؛ هرچه بالاتر، بهتر.</div></details>
+      <details class="faq"><summary>دو دفتر اصلی اعتبار در کانادا کدام‌اند؟</summary><div class="ans"><span class="en">Equifax</span> و <span class="en">TransUnion</span>.</div></details>
+      <details class="faq"><summary>چقدر سریع می‌توان امتیاز را بهبود داد؟</summary><div class="ans">تدریجی است؛ پرداخت منظم و کاهش استفاده‌ی اعتباری طی ماه‌ها اثر می‌گذارد.</div></details>
+      <details class="faq"><summary>تفاوت بدهی خوب و بد چیست؟</summary><div class="ans">بدهی «خوب» (مثل وام مسکن) دارایی می‌سازد؛ بدهی «بد» (کارت پرهزینه) فقط هزینه است.</div></details>
+
+      <div class="faq-cat">تجمیع بدهی (Debt Consolidation)</div>
+      <details class="faq"><summary>تجمیع بدهی چیست؟</summary><div class="ans">یکپارچه‌سازی چند بدهی در یک پرداخت واحد، اغلب با بهره‌ی کمتر.</div></details>
+      <details class="faq"><summary>چه‌کسی واجد شرایط است؟</summary><div class="ans">معمولاً افرادی با اعتبار قابل‌قبول و درآمد پایدار.</div></details>
+      <details class="faq"><summary>آیا به اعتبارم آسیب می‌زند؟</summary><div class="ans">اگر منظم پرداخت شود، آسیب کم است و حتی می‌تواند بهبود دهد.</div></details>
+      <details class="faq"><summary>تفاوت تجمیع با proposal چیست؟</summary><div class="ans">تجمیع یک وام جدید است (باید کل بدهی بازپرداخت شود)؛ proposal بخشی از بدهی را بخشوده می‌کند.</div></details>
+      <details class="faq"><summary>آیا تجمیع همیشه گزینه‌ی بهتری است؟</summary><div class="ans">نه لزوماً؛ اگر عادت خرج اصلاح نشود، بدهی دوباره انباشته می‌شود.</div></details>
+      <details class="faq"><summary>آیا برای تجمیع باید خانه‌ام را وثیقه بگذارم؟</summary><div class="ans">نه همیشه؛ اما وام تضمین‌شده نرخ بهتری دارد و در عوض ریسک از دست دادن دارایی ایجاد می‌کند.</div></details>
+
+      <div class="faq-cat">پرسش‌های عمومی</div>
+      <details class="faq"><summary>کار با ۴ پیلرز چقدر طول می‌کشد؟</summary><div class="ans">بسته به راهکار؛ پس از ورود LIT، حل بدهی می‌تواند در حدود ۴۵ روز کامل شود <span class="verif i">≈ استنباط منطقی</span>.</div></details>
+      <details class="faq"><summary>آیا اطلاعاتم محرمانه می‌ماند؟</summary><div class="ans">بله، اشتراک اطلاعات فقط با رضایت صریح شما انجام می‌شود.</div></details>
+      <details class="faq"><summary>آیا باید همه‌ی بدهی‌هایم را افشا کنم؟</summary><div class="ans">برای ارزیابی دقیق، شفافیت کامل ضروری است.</div></details>
+      <details class="faq"><summary>اولین قدم چیست؟</summary><div class="ans">یک بررسی رایگان و مستقل از وضعیت مالی (free, independent review).</div></details>
+      <details class="faq"><summary>آیا ۴ پیلرز در استان من فعال است؟</summary><div class="ans">با ۵۱ دفتر در سراسر کانادا، احتمال حضور بالاست؛ از بخش «Find a location» استفاده کنید.</div></details>
+      <details class="faq"><summary>آیا می‌توانم بعداً تصمیم بگیرم؟</summary><div class="ans">بله؛ جلسه‌ی اطلاع‌رسانی آموزشی است و شما را به اقدام فوری مجبور نمی‌کند.</div></details>
+
+      <div class="faq-cat">ازدواج و بدهی مشترک</div>
+      <details class="faq"><summary>آیا مسئول بدهی همسرم هستم؟</summary><div class="ans">بستگی دارد؛ بدهی مشترک یا ضامن‌دار مسئولیت مشترک ایجاد می‌کند. ۴ پیلرز این را در جلسه توضیح می‌دهد.</div></details>
+      <details class="faq"><summary>اگر فقط یکی از ما بدهی داشته باشد چه؟</summary><div class="ans">بدهی فردی معمولاً مسئولیت همان فرد است، مگر بدهی مشترک باشد.</div></details>
+      <details class="faq"><summary>آیا طلاق بر بدهی مشترک اثر دارد؟</summary><div class="ans">بله؛ این یک موضوع پیچیده است که نیازمند مشاوره‌ی تخصصی است.</div></details>
+      <details class="faq"><summary>آیا proposal یک همسر بر اعتبار دیگری اثر می‌گذارد؟</summary><div class="ans">فقط روی بدهی‌های مشترک؛ بدهی فردی همسر دیگر مستقل می‌ماند.</div></details>
+      <details class="faq"><summary>آیا می‌توانیم به‌صورت زوجی یک proposal مشترک ثبت کنیم؟</summary><div class="ans">در مواردی proposal مشترک ممکن است؛ LIT شرایط را بررسی می‌کند.</div></details>
+
+      <div class="faq-cat">وام مسکن (Mortgage)</div>
+      <details class="faq"><summary>آیا پس از پیشنهاد مصرف‌کننده می‌توانم وام مسکن بگیرم؟</summary><div class="ans">بله، اما زمان‌بندی و شرایط متفاوت است؛ ۴ پیلرز تأثیر بر توان دریافت وام را توضیح می‌دهد.</div></details>
+      <details class="faq"><summary>آیا می‌توانم با خانه‌ام بدهی را تجمیع کنم؟</summary><div class="ans">اگر equity کافی دارید، بازتأمین مالی ممکن است گزینه باشد.</div></details>
+      <details class="faq"><summary>آیا بدهی بر نرخ بهره‌ی وام مسکن اثر دارد؟</summary><div class="ans">بله، رتبه‌ی اعتباری بر نرخ پیشنهادی تأثیر می‌گذارد.</div></details>
+      <details class="faq"><summary>آیا وام مسکن در proposal گنجانده می‌شود؟</summary><div class="ans">معمولاً خیر؛ وام مسکن بدهی تضمین‌شده است و خارج از proposal بدون‌تضمین می‌ماند.</div></details>
+      <details class="faq"><summary>چه مدت پس از proposal باید برای وام مسکن صبر کنم؟</summary><div class="ans">متغیر؛ بسته به وام‌دهنده و وضعیت بازسازی اعتبار، اغلب چند سال.</div></details>
+
+      <div class="faq-cat">بازسازی اعتبار پس از پیشنهاد مصرف‌کننده</div>
+      <details class="faq"><summary>چطور پس از proposal اعتبارم را بسازم؟</summary><div class="ans">از طریق برنامه‌های بازسازی اعتبار ۴ پیلرز، پرداخت‌های منظم و ابزارهای اعتباری امن.</div></details>
+      <details class="faq"><summary>چرا ورشکستگی دوم خطرناک است؟</summary><div class="ans">طبق ۴ پیلرز، ورشکستگی دوم «از نظر مالی و روانی ویرانگر است»؛ آموزش از آن جلوگیری می‌کند.</div></details>
+      <details class="faq"><summary>چقدر طول می‌کشد اعتبار بازسازی شود؟</summary><div class="ans">متغیر؛ با پرداخت منظم و گذر زمان به‌تدریج بهبود می‌یابد.</div></details>
+      <details class="faq"><summary>آیا کارت اعتباری تضمین‌شده (secured) به بازسازی کمک می‌کند؟</summary><div class="ans">بله؛ ابزاری رایج برای ساختن دوباره‌ی سابقه‌ی پرداخت است.</div></details>
+      <details class="faq"><summary>آیا باید اطلاعات گزارش اعتباری را بررسی کنم؟</summary><div class="ans">بله؛ ۴ پیلرز تأکید می‌کند اطمینان از صحت اطلاعات گزارش اعتباری برای موفقیت حیاتی است.</div></details>
+
+      <div class="faq-cat">وام دانشجویی</div>
+      <details class="faq"><summary>آیا وام دانشجویی در ورشکستگی بخشوده می‌شود؟</summary><div class="ans">فقط اگر ۷ سال از پایان تحصیل گذشته باشد (قاعده‌ی ۷ سال تحت BIA).</div></details>
+      <details class="faq"><summary>آیا می‌توانم وام دانشجویی را تجمیع کنم؟</summary><div class="ans">بسته به نوع وام (دولتی/خصوصی) متفاوت است؛ نیازمند بررسی.</div></details>
+      <details class="faq"><summary>اگر کمتر از ۷ سال گذشته باشد چه گزینه‌ای دارم؟</summary><div class="ans">مقررات «سختی» (hardship) در موارد خاص ممکن است؛ LIT بررسی می‌کند.</div></details>
+      <details class="faq"><summary>آیا وام دانشجویی در proposal قابل گنجاندن است؟</summary><div class="ans">مشابه ورشکستگی، قاعده‌ی ۷ سال اغلب اعمال می‌شود؛ نیازمند مشاوره‌ی LIT.</div></details>
+
+      <div class="faq-cat">CRA و بدهی مالیاتی</div>
+      <details class="faq"><summary>آیا بدهی CRA در proposal یا ورشکستگی گنجانده می‌شود؟</summary><div class="ans">در بسیاری موارد بله، اما CRA اختیارات ویژه دارد؛ نیازمند بررسی دقیق توسط LIT.</div></details>
+      <details class="faq"><summary>آیا CRA می‌تواند حساب بانکی را توقیف کند؟</summary><div class="ans">بله؛ CRA اختیارات گسترده‌ای برای وصول دارد. بدهی مالیاتی نشانه‌ی ارجاع است.</div></details>
+      <details class="faq"><summary>آیا CRA می‌تواند حقوق را توقیف کند؟</summary><div class="ans">بله، CRA می‌تواند بدون حکم دادگاه اقدام به توقیف کند؛ این یک Red Flag جدی است.</div></details>
+
+      <div class="faq-cat">وصول طلب و اقدام قانونی</div>
+      <details class="faq"><summary>توقیف حقوق (wage garnishment) چیست؟</summary><div class="ans">برداشت اجباری بخشی از حقوق برای پرداخت بدهی؛ نشانه‌ی بحران حاد و ارجاع فوری.</div></details>
+      <details class="faq"><summary>تماس آژانس وصول طلب نشانه‌ی چیست؟</summary><div class="ans">نشانه‌ی فشار جدی؛ از علائم نیاز به ارجاع.</div></details>
+      <details class="faq"><summary>آیا proposal یا ورشکستگی تماس‌های وصول را متوقف می‌کند؟</summary><div class="ans">بله؛ با ثبت رسمی، «توقف خودکار» (stay of proceedings) پیگیری طلبکاران را متوقف می‌کند.</div></details>
+      <details class="faq"><summary>اگر از من شکایت قانونی شده باشد چه؟</summary><div class="ans">این یک وضعیت اضطراری است؛ ارجاع فوری به ۴ پیلرز و سپس LIT ضروری است.</div></details>
+
+      <div class="faq-cat">مسئولیت مشاور و زمان ارجاع</div>
+      <details class="faq"><summary>چه زمانی باید مشتری را ارجاع دهم؟</summary><div class="ans">وقتی بدهی غیرقابل‌مدیریت است و مانع اهداف مالی شده، یا نشانه‌های بحران حاد وجود دارد.</div></details>
+      <details class="faq"><summary>آیا می‌توانم به مشتری بگویم کدام گزینه را انتخاب کند؟</summary><div class="ans">خیر. شما آموزش و شناسایی می‌کنید؛ انتخاب گزینه بر عهده‌ی متخصص است.</div></details>
+      <details class="faq"><summary>اگر مشتری ارجاع را رد کند چه؟</summary><div class="ans">احترام بگذارید، آموزش سبک بدهید و در دور بعدی دوباره با ملایمت مطرح کنید.</div></details>
+      <details class="faq"><summary>آیا برای ارجاع نیاز به رضایت کتبی است؟</summary><div class="ans">رضایت صریح (شفاهی یا کتبی) و مستندسازی آن الزامی است؛ کتبی ایمن‌تر است.</div></details>
+      <details class="faq"><summary>آیا می‌توانم کارمزد ارجاع بگیرم؟</summary><div class="ans">۴ پیلرز گزارش کارمزد ارجاع را به مشاور WFG ارائه می‌دهد؛ جزئیات دقیق سیاست داخلی است <span class="verif x">✕ نیازمند دسترسی داخلی</span>.</div></details>
+      <details class="faq"><summary>آیا می‌توانم نتیجه‌ی کاهش بدهی را تضمین کنم؟</summary><div class="ans">هرگز. تضمین نتیجه یک خطای انطباقی جدی است.</div></details>
+      <details class="faq"><summary>آیا ۴ پیلرز با همه‌ی انواع بدهی کار می‌کند؟</summary><div class="ans">با طیف گسترده‌ای از بدهی مصرفی؛ موارد پیچیده‌ی کسب‌وکار ممکن است متخصص اضافی بخواهد.</div></details>
+      <details class="faq"><summary>اگر مطمئن نیستم ارجاع لازم است یا نه؟</summary><div class="ans">با ملایمت بپرسید و وضعیت را در needs analysis بسنجید؛ در ابهام، آموزش سبک بدهید.</div></details>
+      <details class="faq"><summary>آیا باید نوع دقیق راهکار را به مشتری بگویم؟</summary><div class="ans">خیر؛ فقط بگویید گزینه‌های متعددی هست و متخصص بهترین را تعیین می‌کند.</div></details>
+      <details class="faq"><summary>چطور درباره‌ی هزینه‌ی بازسازی اعتبار شفاف باشم؟</summary><div class="ans">بگویید مشاوره‌ی اولیه رایگان است اما خدمت بازسازی اعتبار هزینه‌بر است و در جلسه توضیح داده می‌شود.</div></details>
+      <details class="faq"><summary>اگر مشتری بپرسد آیا WFG از این ارجاع سود می‌برد؟</summary><div class="ans">صادقانه رابطه‌ی شراکت و کارمزد احتمالی را افشا کنید.</div></details>
+      <details class="faq"><summary>آیا می‌توانم در جلسه‌ی ۴ پیلرز حضور داشته باشم؟</summary><div class="ans">بستگی به ترجیح مشتری دارد؛ همراهی می‌تواند اعتماد بسازد اما حریم خصوصی مشتری مقدم است.</div></details>
+      <details class="faq"><summary>پس از ارجاع چطور پیگیری کنم؟</summary><div class="ans">یک تماس محترمانه برای اطمینان از پشتیبانی مشتری، بدون فشار؛ سپس ادامه‌ی برنامه‌ریزی مالی.</div></details>
+      <details class="faq"><summary>آیا مستندسازی ارجاع الزامی است؟</summary><div class="ans">بله؛ ثبت گفت‌وگوی بدهی، رضایت و ارجاع در پرونده، هم انطباق و هم خود شما را محافظت می‌کند.</div></details>
+
+      <div class="faq-cat">حریم خصوصی و انطباق</div>
+      <details class="faq"><summary>PIPEDA چیست و چرا مهم است؟</summary><div class="ans">قانون فدرال حریم خصوصی کانادا؛ پیش از اشتراک اطلاعات مشتری با شخص ثالث، رضایت آگاهانه الزامی است.</div></details>
+      <details class="faq"><summary>اگر بدون رضایت اطلاعات را به اشتراک بگذارم چه می‌شود؟</summary><div class="ans">نقض PIPEDA و قوانین استانی؛ ریسک انطباقی و حقوقی جدی برای شما و WFG.</div></details>
+      <details class="faq"><summary>needs analysis چیست؟</summary><div class="ans">ارزیابی ساختاریافته‌ی وضعیت و اهداف مالی مشتری؛ طبق توافق FSRA با WFGIA الزامی است.</div></details>
+      <details class="faq"><summary>«نامه‌ی دلیل» (reasons-why letter) چیست؟</summary><div class="ans">مستندی که مبنای توصیه‌ی شما را توضیح می‌دهد؛ بخشی از الزامات انطباق WFGIA.</div></details>
+      <details class="faq"><summary>چه تعهداتی هرگز نباید بدهم؟</summary><div class="ans">تضمین درصد کاهش بدهی، تضمین حفظ اعتبار، تضمین زمان دقیق، یا ادعای «بدون پیامد بودن» ورشکستگی/proposal.</div></details>
+
+      <div class="faq-cat">بودجه‌بندی و جریان نقدی</div>
+      <details class="faq"><summary>چرا بودجه‌بندی پس از حل بدهی مهم است؟</summary><div class="ans">برای جلوگیری از انباشت دوباره‌ی بدهی؛ آموزش مالی هسته‌ی مدل ۴ پیلرز برای جلوگیری از بحران دوم است.</div></details>
+      <details class="faq"><summary>صندوق اضطراری چقدر باید باشد؟</summary><div class="ans">قاعده‌ی رایج ۳ تا ۶ ماه هزینه‌ی زندگی است؛ پس از حل بدهی، ساختن آن اولویت دارد.</div></details>
+      <details class="faq"><summary>آیا حل بدهی به پس‌انداز کمک می‌کند؟</summary><div class="ans">بله؛ آزاد شدن جریان نقدی امکان پس‌انداز، بیمه و سرمایه‌گذاری را فراهم می‌کند.</div></details>
+      <details class="faq"><summary>تفاوت TFSA و RRSP در بازیابی مالی چیست؟</summary><div class="ans">هر دو ابزار پس‌انداز با مزیت مالیاتی‌اند؛ انتخاب بستگی به اهداف دارد و موضوع برنامه‌ریزی WFG است.</div></details>
+      <details class="faq"><summary>آیا باید قبل از پس‌انداز، بدهی را تسویه کنم؟</summary><div class="ans">معمولاً تسویه‌ی بدهی پرهزینه اولویت دارد، اما داشتن صندوق اضطراری کوچک هم‌زمان مهم است.</div></details>
+
+      <div class="faq-cat">فرایند ارجاع WFG–4 Pillars</div>
+      <details class="faq"><summary>ارجاع چگونه ثبت می‌شود؟</summary><div class="ans">از طریق فرم ارجاع در صفحه‌ی WFG شرکت ۴ پیلرز، با تکمیل اطلاعات مشتری و کد همکار WFG.</div></details>
+      <details class="faq"><summary>چه اطلاعاتی برای ارجاع لازم است؟</summary><div class="ans">نام، تلفن، کد پستی و ایمیل مشتری، به‌همراه نام و کد همکار WFG.</div></details>
+      <details class="faq"><summary>پس از ثبت ارجاع چه اتفاقی می‌افتد؟</summary><div class="ans">دفتر محلی ۴ پیلرز با مشتری تماس می‌گیرد و یک مشاوره‌ی رایگان ترتیب می‌دهد.</div></details>
+      <details class="faq"><summary>آیا ارجاع به معنای واگذاری مشتری است؟</summary><div class="ans">خیر؛ «ارجاع، واگذاری رابطه نیست — باز کردن آن است.» مشتری برای برنامه‌ریزی بلندمدت بازمی‌گردد.</div></details>
+      <details class="faq"><summary>آیا ۴ پیلرز گزارش ارجاع می‌دهد؟</summary><div class="ans">بله؛ ۴ پیلرز گزارش وضعیت ارجاع و کارمزد را به مشاور WFG ارائه می‌دهد.</div></details>
+      <details class="faq"><summary>آیا می‌توانم چند مشتری را هم‌زمان ارجاع دهم؟</summary><div class="ans">بله، اما برای هر مشتری باید رضایت جداگانه گرفته و مستند شود.</div></details>
+      <details class="faq"><summary>اگر مشتری در استان دیگری باشد چه؟</summary><div class="ans">با ۵۱ دفتر در سراسر کانادا، مشتری به نزدیک‌ترین دفتر محلی متصل می‌شود.</div></details>
+      <details class="faq"><summary>آیا آموزش رسمی برای ارجاع وجود دارد؟</summary><div class="ans">بله؛ وبینارهای CE تأییدشده‌ی ۴ پیلرز برای مشاوران WFG (از طریق MyWFG). جزئیات ماژول‌های داخلی <span class="verif x">✕ نیازمند دسترسی داخلی</span> است.</div></details>
+      <details class="faq"><summary>چطور بفهمم ارجاع موفق بوده است؟</summary><div class="ans">از طریق پیگیری با مشتری و گزارش ۴ پیلرز؛ همچنین بازگشت مشتری برای برنامه‌ریزی نشانه‌ی موفقیت است.</div></details>
+      <details class="faq"><summary>آیا باید پس از ارجاع با مشتری در تماس بمانم؟</summary><div class="ans">بله؛ یک پیگیری محترمانه اعتماد می‌سازد و رابطه‌ی بلندمدت را حفظ می‌کند.</div></details>
+
+      <div class="box info">
+        <div class="bt">💡 نکته‌ی استفاده</div>
+        <p>این بخش بیش از ۱۰۰ پرسش در ۱۲ دسته دارد. برای یافتن سریع، از جست‌وجوی مرورگر (<span class="en">Ctrl+F</span> / <span class="en">Cmd+F</span>) استفاده کنید. همه‌ی پاسخ‌ها در حالت چاپ به‌صورت باز نمایش داده می‌شوند.</p>
+      </div>
+    </section>
+    <!-- ============ PART 13 ============ -->
+    <section class="part" id="p13">
+      <div class="part-head"><span class="pn">۱۳</span><h2 class="part-title">مطالعات موردی</h2></div>
+      <p class="lead-p">سناریوهای واقع‌گرایانه برای تمرین قضاوت. هر مورد شامل واقعیت‌ها، تحلیل، رویکرد پیشنهادی، ملاحظات ارجاع و درس‌آموخته است. این موارد آموزشی‌اند و اسامی فرضی هستند.</p>
+
+      <div class="case">
+        <h4>مورد ۱: حرفه‌ای جوان با بدهی کارت اعتباری</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«سارا»، ۲۸ ساله، درآمد ۶۰هزار دلار، ۲۲هزار دلار بدهی کارت اعتباری با بهره‌ی ۱۹٪. فقط حداقل پرداخت می‌کند.</p>
+        <div class="label">تحلیل</div>
+        <p>بدهی قابل‌مدیریت اما مانع پس‌انداز و بیمه است. اعتبار هنوز قابل‌قبول است.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>آموزش درباره‌ی نسبت استفاده‌ی اعتباری؛ احتمال تجمیع بدهی مناسب است.</p>
+        <div class="label">ملاحظات ارجاع</div>
+        <p>ارجاع آموزشی به ۴ پیلرز برای بررسی گزینه‌ی تجمیع؛ بحران حاد نیست.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>ارجاع زودهنگام از تبدیل بدهی قابل‌مدیریت به بحران جلوگیری می‌کند.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۲: خانواده‌ی غرق در بدهی بدون‌تضمین</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>خانواده‌ای با ۱۵۰هزار دلار بدهی و فقط ۵هزار دلار درآمد ماهانه، بدون پس‌انداز، تحت استرس شدید.</p>
+        <div class="label">تحلیل</div>
+        <p>بدهی غیرقابل‌مدیریت؛ نشانه‌های بحران حاد. نیازمند راهکار رسمی احتمالی (proposal).</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع فوری به ۴ پیلرز؛ احتمالاً مسیر به یک LIT.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>حل بدهی، جریان نقدی را آزاد می‌کند و امکان بیمه و پس‌انداز را فراهم می‌سازد — سپس مشتری به WFG بازمی‌گردد.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۳: صاحب کسب‌وکار خویش‌فرما</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«رضا»، خویش‌فرما، درآمد نامنظم، آمیزه‌ای از بدهی شخصی و کسب‌وکار، بدهی CRA.</p>
+        <div class="label">تحلیل</div>
+        <p>پیچیده — ترکیب بدهی شخصی و تجاری و مالیاتی نیازمند بررسی دقیق است.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>شناسایی و ارجاع؛ از تحلیل تخصصی خودداری کنید. ممکن است متخصص اضافی لازم باشد.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>در موارد پیچیده، مرز نقش خود را رعایت کنید؛ فقط در را باز کنید.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۴: چرخه‌ی وام payday</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«مریم» برای پرداخت یک وام payday، وام payday دیگری می‌گیرد.</p>
+        <div class="label">تحلیل</div>
+        <p>نشانه‌ی بحران حاد و فشار شدید جریان نقدی.</p>
+        <div class="label">رویکرد پیشنهادی + درس‌آموخته</div>
+        <p>ارجاع فوری. چرخه‌ی payday یکی از واضح‌ترین Red Flag‌هاست و نیازمند اقدام سریع است.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۵: نامزد پیشنهاد مصرف‌کننده</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>زوجی با ۶۰هزار دلار بدهی کارت، پرداخت ۱٬۵۰۰ دلار در ماه با بهره‌ی ۱۹٪، درآمد ترکیبی ۵۰هزار دلار.</p>
+        <div class="label">تحلیل</div>
+        <p>توان پرداخت کامل ندارند اما درآمد پایدار دارند — نامزد مناسب proposal.</p>
+        <div class="label">رویکرد + درس‌آموخته</div>
+        <p>ارجاع به ۴ پیلرز برای آموزش گزینه‌ها؛ راهکار نهایی را LIT تعیین می‌کند. (الهام‌گرفته از سناریوی واقعی شراکت WFG–4 Pillars که در آن بدهی به ۲۰هزار دلار و پرداخت به ۳۵۰ دلار کاهش یافت و زوج توانستند بیمه و TFSA بگیرند.)</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۶: استرس وام مسکن و صاحب‌خانه با equity</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«جان و لیزا»، صاحب خانه‌ای با ۲۰۰هزار دلار equity، اما ۵۵هزار دلار بدهی کارت و خط اعتباری با بهره‌ی بالا. وام مسکن را منظم پرداخت می‌کنند اما بدهی بدون‌تضمین فشار می‌آورد.</p>
+        <div class="label">تحلیل</div>
+        <p>اعتبار هنوز قابل‌قبول است و دارایی کافی برای بازتأمین مالی دارند. ورشکستگی یا proposal لازم نیست.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع آموزشی برای بررسی بازتأمین مالی؛ این گزینه کمترین تأثیر اعتباری را دارد.</p>
+        <div class="label">ملاحظات ارجاع</div>
+        <p>هشدار محتاطانه: بازتأمین، بدهی بدون‌تضمین را به بدهی تضمین‌شده روی خانه تبدیل می‌کند — ریسک باید برای مشتری شفاف شود (توسط متخصص).</p>
+        <div class="label">درس‌آموخته</div>
+        <p>وجود equity گزینه‌های کم‌ریسک‌تری باز می‌کند؛ اما تبدیل نوع بدهی پیامد دارد و باید توسط متخصص توضیح داده شود.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۷: مشکل وام دانشجویی</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«آرمان»، ۲۵ ساله، ۴۰هزار دلار وام دانشجویی دولتی، فارغ‌التحصیل ۲ سال پیش، درآمد پایین و پرداخت دشوار.</p>
+        <div class="label">تحلیل</div>
+        <p>چون کمتر از ۷ سال از پایان تحصیل گذشته، وام دانشجویی معمولاً در proposal یا ورشکستگی پاک نمی‌شود (قاعده‌ی ۷ سال).</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع برای بررسی گزینه‌های بازپرداخت دولتی (مثل برنامه‌های کمک به بازپرداخت) و آموزش بودجه‌بندی؛ نه راهکار رسمی اعسار.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>قاعده‌ی ۷ سال را بشناسید؛ راهکار درست برای وام دانشجویی جوان متفاوت از بدهی کارت است.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۸: بدهی مالیاتی CRA با تهدید توقیف</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«نسرین»، خویش‌فرما، ۳۰هزار دلار بدهی مالیاتی معوق به CRA و نامه‌ی هشدار توقیف حساب بانکی دریافت کرده است.</p>
+        <div class="label">تحلیل</div>
+        <p>بحران حاد. CRA اختیارات ویژه‌ی وصول دارد (از جمله توقیف بدون حکم دادگاه). نیازمند اقدام سریع.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع فوری به ۴ پیلرز و سپس LIT؛ بدهی CRA در شرایط خاص می‌تواند در راهکار رسمی گنجانده شود.</p>
+        <div class="label">ملاحظات ارجاع + درس‌آموخته</div>
+        <p>هرگز خودتان درباره‌ی بدهی مالیاتی مشاوره ندهید؛ این حوزه‌ی تخصصی است. تهدید توقیف = ارجاع فوری.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۹: موقعیت نزدیک به ورشکستگی</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«دیوید»، پس از بیکاری طولانی، ۹۰هزار دلار بدهی بدون‌تضمین، بدون پس‌انداز، بدون دارایی قابل‌توجه و بدون توان بازپرداخت حتی بخشی از بدهی.</p>
+        <div class="label">تحلیل</div>
+        <p>گزینه‌های دیگر (تجمیع، proposal) به‌دلیل نبود درآمد پایدار عملی نیستند. ورشکستگی ممکن است تنها راه باشد.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع فوری؛ ۴ پیلرز پیامدها و دارایی‌های معاف (مثل RRSP) را آموزش می‌دهد و او را به LIT ارجاع می‌دهد.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>ورشکستگی آخرین گزینه است اما گاهی ضروری؛ نقش شما همدلی و ارجاع است، نه قضاوت یا توصیه‌ی رسمی.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۱۰: مشتری مردد و خجالت‌زده</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«پریا» نشانه‌های فشار بدهی نشان می‌دهد اما هنگام صحبت از پول دفاعی و خجالت‌زده می‌شود و ارجاع را رد می‌کند.</p>
+        <div class="label">تحلیل</div>
+        <p>مانع اصلی روانی است نه مالی. فشار بیش از حد می‌تواند اعتماد را از بین ببرد.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>همدلی، عادی‌سازی موضوع («بسیاری از خانواده‌ها با همین روبه‌رو هستند»)، آموزش سبک، و طرح دوباره با ملایمت در جلسه‌ی بعد.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>رضایت و آمادگی مشتری مقدم است؛ ارجاع اجباری ممنوع. صبر، رابطه را حفظ می‌کند و در بلندمدت به ارجاع موفق منجر می‌شود.</p>
+      </div>
+
+      <div class="case">
+        <h4>مورد ۱۱: بدهی مشترک پس از جدایی</h4>
+        <div class="label">واقعیت‌ها</div>
+        <p>«مارک و آنا» در حال جدایی‌اند و ۴۰هزار دلار بدهی مشترک (خط اعتباری و کارت مشترک) دارند.</p>
+        <div class="label">تحلیل</div>
+        <p>مسئولیت مشترک به این معناست که هر دو در قبال کل بدهی مسئول‌اند، صرف‌نظر از توافق جدایی. موضوع پیچیده و حساس.</p>
+        <div class="label">رویکرد پیشنهادی</div>
+        <p>ارجاع برای آموزش درباره‌ی مسئولیت مشترک و گزینه‌ها؛ ممکن است مشاوره‌ی حقوقی جداگانه نیز لازم باشد.</p>
+        <div class="label">درس‌آموخته</div>
+        <p>بدهی مشترک با جدایی پاک نمی‌شود؛ هر دو طرف باید آگاه شوند. این یکی از موضوعاتی است که ۴ پیلرز صراحتاً در جلسه پوشش می‌دهد.</p>
+      </div>
+
+      <div class="box tip">
+        <div class="bt">✓ الگوی مشترک همه‌ی موارد</div>
+        <p>در هر مورد، نقش شما ثابت است: <strong>شناسایی نشانه‌ها ← همدلی ← آموزش سبک ← کسب رضایت ← ارجاع ← مستندسازی ← پیگیری</strong>. تعیین راهکار رسمی هیچ‌گاه بر عهده‌ی شما نیست.</p>
+      </div>
+    </section>
+
+    <section class="part" id="p14">
+      <div class="part-head"><span class="pn">۱۴</span><h2 class="part-title">واژه‌نامه‌ی انگلیسی–فارسی</h2></div>
+      <p class="lead-p">اصطلاحات فنی کلیدی با حفظ معادل انگلیسی برای دقت در گفت‌وگوهای حرفه‌ای.</p>
+      <div class="gloss">
+      <dl>
+        <dt>ورشکستگی (Insolvency) <span class="en">Insolvency</span></dt>
+        <dd>وضعیتی که فرد قادر به پرداخت بدهی‌های خود در سررسید نیست.</dd>
+        <dt>پیشنهاد مصرف‌کننده <span class="en">Consumer Proposal</span></dt>
+        <dd>توافق رسمی تحت BIA برای بازپرداخت بخشی از بدهی از طریق LIT.</dd>
+        <dt>متولی مجاز ورشکستگی <span class="en">Licensed Insolvency Trustee (LIT)</span></dt>
+        <dd>تنها فرد مجاز قانونی در کانادا برای اجرای proposal و bankruptcy.</dd>
+        <dt>تجمیع بدهی <span class="en">Debt Consolidation</span></dt>
+        <dd>یکپارچه‌سازی چند بدهی در یک پرداخت، اغلب با بهره‌ی کمتر.</dd>
+        <dt>بازتأمین مالی <span class="en">Refinancing</span></dt>
+        <dd>جایگزینی بدهی موجود با وام جدید، اغلب با استفاده از دارایی.</dd>
+        <dt>ورشکستگی <span class="en">Bankruptcy</span></dt>
+        <dd>فرایند قانونی برای رهایی از بدهی زمانی که بازپرداخت ممکن نیست.</dd>
+        <dt>دفتر اعتبار <span class="en">Credit Bureau</span></dt>
+        <dd>سازمانی که سابقه‌ی اعتباری افراد را نگه می‌دارد (مثل Equifax، TransUnion).</dd>
+        <dt>بدهی تضمین‌شده <span class="en">Secured Debt</span></dt>
+        <dd>بدهی پشتیبانی‌شده با وثیقه (مثل وام مسکن یا خودرو).</dd>
+        <dt>بدهی بدون‌تضمین <span class="en">Unsecured Debt</span></dt>
+        <dd>بدهی بدون وثیقه (مثل کارت اعتباری).</dd>
+        <dt>وصول طلب <span class="en">Collections</span></dt>
+        <dd>فرایند پیگیری طلب توسط طلبکار یا آژانس وصول.</dd>
+        <dt>نکول <span class="en">Default</span></dt>
+        <dd>عدم پرداخت بدهی طبق شرایط توافق‌شده.</dd>
+        <dt>توان‌بخشی مالی <span class="en">Rehabilitation</span></dt>
+        <dd>بازسازی سلامت مالی و اعتبار پس از بحران.</dd>
+        <dt>رتبه‌ی اعتباری <span class="en">Credit Score</span></dt>
+        <dd>عددی که اعتبار فرد را نشان می‌دهد (معمولاً ۳۰۰ تا ۹۰۰).</dd>
+        <dt>قانون ورشکستگی و اعسار <span class="en">Bankruptcy and Insolvency Act (BIA)</span></dt>
+        <dd>قانون فدرال کانادا که چارچوب ورشکستگی و proposal را تعیین می‌کند.</dd>
+        <dt>توقیف حقوق <span class="en">Wage Garnishment</span></dt>
+        <dd>برداشت اجباری بخشی از حقوق برای پرداخت بدهی.</dd>
+        <dt>ارزش خالص دارایی <span class="en">Equity</span></dt>
+        <dd>تفاوت ارزش دارایی و بدهی روی آن (مثلاً خانه منهای مانده‌ی وام).</dd>
+        <dt>تحلیل نیاز <span class="en">Needs Analysis</span></dt>
+        <dd>ارزیابی ساختاریافته‌ی وضعیت و اهداف مالی مشتری.</dd>
+        <dt>دارایی معاف <span class="en">Exempt Assets</span></dt>
+        <dd>دارایی‌هایی که در ورشکستگی محافظت می‌شوند (متغیر بر اساس استان).</dd>
+        <dt>جریان نقدی <span class="en">Cash Flow</span></dt>
+        <dd>گردش درآمد و هزینه‌ی فرد در هر دوره.</dd>
+        <dt>رضایت آگاهانه <span class="en">Informed Consent</span></dt>
+        <dd>موافقت صریح مشتری با آگاهی کامل از پیامدها (الزامی پیش از ارجاع).</dd>
+      </dl>
+      </div>
+    </section>
+
+    <!-- ============ PART 15 ============ -->
+    <section class="part" id="p15">
+      <div class="part-head"><span class="pn">۱۵</span><h2 class="part-title">نقشه‌راه یادگیری مشاور</h2></div>
+      <p class="lead-p">سه برنامه‌ی مطالعاتی: تسلط ۷ روزه، تسلط ۳۰ روزه، و شایستگی حرفه‌ای ۹۰ روزه. شامل مطالعه، تمرین، گفت‌وگو، و نقاط عطف.</p>
+
+      <h3>برنامه‌ی تسلط ۷ روزه</h3>
+      <div class="day"><span class="dh">روز ۱ — جهت‌یابی</span>
+        <ul class="clean"><li>وب‌سایت ۴ پیلرز و این کتابچه (بخش‌های ۱ تا ۳) را بخوانید.</li><li>الزام CE استان خود را شناسایی کنید.</li><li>برگه‌ی یک‌صفحه‌ای «گزینه‌های بدهی در کانادا» بسازید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۲ — مبانی بدهی کانادا</span>
+        <ul class="clean"><li>منابع FCAC و OSB را مرور کنید.</li><li>واژگان کلیدی (LIT, BIA, consumer proposal) را تمرین کنید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۳ — تقاطع اعسار و بیمه</span>
+        <ul class="clean"><li>تأثیر اعسار بر بیمه‌ی عمر/ازکارافتادگی را بخوانید.</li><li>قواعد دارایی معاف RRSP را مرور کنید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۴ — انطباق و حریم خصوصی</span>
+        <ul class="clean"><li>الزامات رضایت PIPEDA را مرور کنید.</li><li>اسکریپت شخصی رضایت خود را بنویسید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۵ — تمرین گفت‌وگو</span>
+        <ul class="clean"><li>۱۰ پرسش طبیعی برای کشف بدهی بنویسید.</li><li>سناریوهای الف و ب بخش ۱۰ را نقش‌بازی کنید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۶ — فرایند ارجاع</span>
+        <ul class="clean"><li>فرم ارجاع و فیلدهای الزامی را مرور کنید.</li><li>جریان کامل: شناسایی ← معرفی ← رضایت ← ثبت را تمرین کنید.</li></ul>
+      </div>
+      <div class="day"><span class="dh">روز ۷ — مرور و تعهد</span>
+        <ul class="clean"><li>یادداشت‌های هفته را مرور و شکاف‌ها را شناسایی کنید.</li><li>تعهد کنید ظرف ۳۰ روز اولین ارجاع واقعی را انجام دهید.</li></ul>
+      </div>
+
+      <h3>برنامه‌ی تسلط ۳۰ روزه</h3>
+      <ul>
+        <li><strong>هفته‌ی ۱:</strong> تکمیل برنامه‌ی ۷ روزه + ساخت برگه‌ی گزینه‌های بدهی.</li>
+        <li><strong>هفته‌ی ۲:</strong> تکمیل ماژول‌های آموزشی مرتبط در MyWFG؛ همراهی یک همکار باتجربه.</li>
+        <li><strong>هفته‌ی ۳:</strong> سه جلسه‌ی needs analysis واقعی؛ ثبت اولین ارجاع واقعی با رضایت.</li>
+        <li><strong>هفته‌ی ۴:</strong> ممیزی پرونده‌ها، بررسی پیشرفت CE، دریافت بازخورد از SMD.</li>
+      </ul>
+
+      <h3>برنامه‌ی شایستگی حرفه‌ای ۹۰ روزه</h3>
+      <ul>
+        <li><strong>ماه ۱ — بنیان:</strong> تسلط بر مبانی بدهی، انطباق، و فرایند ارجاع (برنامه‌ی ۳۰ روزه).</li>
+        <li><strong>ماه ۲ — کاربرد:</strong> انجام منظم ارجاع‌ها، تسلط بر اسکریپت‌ها، مطالعه‌ی موارد واقعی، تکمیل وبینارهای CE مرتبط.</li>
+        <li><strong>ماه ۳ — تثبیت و رهبری:</strong> ساخت سند مرجع شخصی فرایند ارجاع، آموزش همکاران تازه‌کار، ممیزی فصلی انطباق، شناسایی فعالانه‌ی مشتریان موجود برای ارجاع.</li>
+      </ul>
+
+      <div class="box note">
+        <div class="bt">📌 یادآوری درباره‌ی آموزش داخلی WFG</div>
+        <p>نام دقیق ماژول‌ها، کدهای دوره، و سیاست‌های داخلی WFG برای ارجاع به ۴ پیلرز به‌صورت عمومی در دسترس نیست <span class="verif x">✕ نیازمند دسترسی داخلی</span>. برای این موارد، وارد MyWFG شوید یا با SMD خود مشورت کنید. (وبینارهای CE تأییدشده‌ی ۴ پیلرز مانند «Surviving a Financial Emergency» و «Insolvency and the Insurance Industry» از طریق صفحه‌ی WFG شرکت و MyWFG قابل دسترسی‌اند.)</p>
+      </div>
+    </section>
+
+    <!-- ============ SOURCES ============ -->
+    <section class="part" id="sources">
+      <div class="part-head"><span class="pn">▣</span><h2 class="part-title">منابع و استنادها</h2></div>
+      <p>این کتابچه بر پایه‌ی منابع عمومی زیر تهیه شده است. اطلاعاتی که قابل راستی‌آزمایی عمومی نبودند، صراحتاً با برچسب «نیازمند دسترسی داخلی» مشخص شده‌اند.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>منبع</th><th>نشانی / توضیح</th></tr></thead>
+        <tbody>
+          <tr><td>وب‌سایت رسمی 4 Pillars</td><td><span class="en">4pillars.ca</span> — صفحات «Find the best solution», «No upfront fees», «What is debt restructuring», «Common Questions», آمار شرکت</td></tr>
+          <tr><td>صفحه‌ی شراکت WFG</td><td><span class="en">4pillars.ca/wfg</span> — فرم ارجاع، برنامه‌ی CE، اعلامیه‌ی رضایت</td></tr>
+          <tr><td>Trustpilot</td><td>امتیاز ۴٫۹/۵ بر پایه‌ی ۳٬۶۶۸ نظر</td></tr>
+          <tr><td>FSRA (انتاریو)</td><td><span class="en">fsrao.ca</span> — توافق انطباق WFGIA Canada، ۲۰۲۴</td></tr>
+          <tr><td>FCAC</td><td><span class="en">canada.ca/en/financial-consumer-agency</span></td></tr>
+          <tr><td>OSB</td><td><span class="en">ic.gc.ca/eic/site/bsf-osb.nsf</span></td></tr>
+          <tr><td>Bankruptcy and Insolvency Act</td><td><span class="en">laws-lois.justice.gc.ca</span></td></tr>
+          <tr><td>OSB / ISED — راهنمای مصرف‌کننده‌ی اعسار</td><td><span class="en">ised-isde.canada.ca</span> — «Consumed by debt»</td></tr>
+          <tr><td>CAIRP</td><td><span class="en">cairp.ca</span> — آمار اعسار و تحلیل صنعت</td></tr>
+          <tr><td>Equifax Canada</td><td><span class="en">equifax.ca</span> — رتبه و گزارش اعتباری، توقیف حقوق</td></tr>
+          <tr><td>4 Pillars — صفحه‌ی About / Who We Are</td><td><span class="en">4pillars.ca/about</span> — تأسیس ۲۰۰۲، EmpowerU، آمار</td></tr>
+          <tr><td>Paul Murphy (LinkedIn)</td><td>«بزرگ‌ترین شرکت مستقل دفاع از بدهکار در کانادا»، ۸۰+ فرنچایز</td></tr>
+          <tr><td>کتاب Beating the Debt Game</td><td>نوشته‌ی <span class="en">Paul Murphy</span> (بنیان‌گذار 4 Pillars)</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    </div><!-- /wrap -->
+
+    <footer>
+      <b>راهنمای جامع مشاور WFG — 4 Pillars و راهکارهای بدهی در کانادا</b><br>
+      نسخه‌ی آموزشی · تهیه‌شده برای مشاوران مالی WFG در کانادا<br>
+      پشتیبانی شراکت: <a href="mailto:wfgsupport@4pillars.ca">wfgsupport@4pillars.ca</a> · آموزش میدانی: <a href="mailto:paulm@4pillars.ca">paulm@4pillars.ca</a>
+      <div class="legal">
+        این سند صرفاً برای مقاصد آموزشی و مرجع است و مشاوره‌ی حقوقی، مالیاتی، ورشکستگی یا انطباق محسوب نمی‌شود. هیچ سیاست داخلی محرمانه‌ای در آن ساخته نشده است. مشاوران باید همه‌ی الزامات انطباق را با نهاد ناظر استانی و دپارتمان انطباق WFG راستی‌آزمایی کنند. اطلاعات عمومی تا تاریخ تهیه معتبر است و ممکن است تغییر کند.
+      </div>
+    </footer>
+  </main>
+</div>
+<button id="toTop" aria-label="بازگشت به بالا">↑</button>
+<script>
+(function(){
+  var sidebar=document.getElementById('sidebar');
+  var scrim=document.getElementById('scrim');
+  var btn=document.getElementById('menuBtn');
+  function close(){sidebar.classList.remove('open');scrim.classList.remove('open');}
+  if(btn){btn.addEventListener('click',function(){sidebar.classList.toggle('open');scrim.classList.toggle('open');});}
+  if(scrim){scrim.addEventListener('click',close);}
+  // close on link tap (mobile)
+  document.querySelectorAll('#toc a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=980)close();});});
+
+  // active link on scroll
+  var links=Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+  var sections=links.map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    var y=window.scrollY+120;
+    var current=sections[0];
+    sections.forEach(function(s){if(s.offsetTop<=y)current=s;});
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+current.id);});
+    toTop.classList.toggle('show',window.scrollY>600);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
